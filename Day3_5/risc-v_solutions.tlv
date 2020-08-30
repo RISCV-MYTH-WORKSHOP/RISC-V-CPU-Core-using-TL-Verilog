@@ -42,7 +42,12 @@
          $reset = *reset;
          
          //NEXT PC
-         $pc[31:0] = >>1$reset ? 32'b0 : >>1$pc + 32'd4;
+         //$pc[31:0] = >>1$reset ? 32'b0 : >>1$pc + 32'd4;
+         
+         //MODIFIED NEXT PC LOGIC FOR INCLUDING BRANCH INSTRCUTIONS
+         $pc[31:0] = >>1$reset ? 32'b0 :
+                     >>1$taken_branch ? >>1$br_target_pc :
+                     >>1$pc + 32'd4;
          
          //FETCH LOGIC
       @1 
@@ -160,8 +165,8 @@
                          32'bx ;
          
          
-         //BRANCH INSTRUCTIONS
-         $taken_branch = $is_beg ? ($src1_value == $src2_value):
+         //BRANCH INSTRUCTIONS 1
+         $taken_branch = $is_beq ? ($src1_value == $src2_value):
                          $is_bne ? ($src1_value != $src2_value):
                          $is_blt ? (($src1_value < $src2_value) ^ ($src1_value[31] != $src2_value[31])):
                          $is_bge ? (($src1_value >= $src2_value) ^ ($src1_value[31] != $src2_value[31])):
@@ -169,7 +174,8 @@
                          $is_bgeu ? ($src1_value >= $src2_value):
                                     1'b0;
          
-         
+         //BRANCH INSTRUCTIONS 2
+         $br_target_pc[31:0] = $pc +$imm;
          
          
          

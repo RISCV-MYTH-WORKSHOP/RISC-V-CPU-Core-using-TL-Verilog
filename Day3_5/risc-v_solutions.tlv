@@ -47,11 +47,10 @@
                      >>3$valid_taken_branch ? >>3$br_target_pc :
                      >>3$inc_pc ;
                      
-         $start = >>1$reset && !$reset;
+         //$start = >>1$reset && !$reset;
          
-         $valid = $reset ? 1'b0 :
-                  $start ? 1'b1 :
-                  >>3$valid ;
+      @3         
+         $valid = !(>>1$valid_taken_branch || >>2$valid_taken_branch) ;
          
          
          //FETCH LOGIC

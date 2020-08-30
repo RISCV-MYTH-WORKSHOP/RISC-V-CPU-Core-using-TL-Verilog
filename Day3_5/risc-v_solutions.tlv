@@ -42,12 +42,11 @@
          $reset = *reset;
          
          //NEXT PC
-         //$pc[31:0] = >>1$reset ? 32'b0 : >>1$pc + 32'd4;
          
-         //MODIFIED NEXT PC LOGIC FOR INCLUDING BRANCH INSTRCUTIONS
+         $inc_pc[31:0] = $pc + 32'd4;
          $pc[31:0] = >>1$reset ? 32'b0 :
-                     >>1$taken_branch ? >>1$br_target_pc :
-                     >>1$pc + 32'd4;
+                     >>3$valid_taken_branch ? >>3$br_target_pc :
+                     >>3$inc_pc ;
                      
          $start = >>1$reset && !$reset;
          
@@ -153,8 +152,9 @@
          $rf_rd_index2[4:0] = $rs2;
          
          
+      
          //REGISTER FILE WRITE
-         $rf_wr_en = $rd_valid && $rd != 5'b0;
+         $rf_wr_en = $rd_valid && $rd != 5'b0 && $valid;
          $rf_wr_index[4:0] = $rd;
          $rf_wr_data[31:0] = $result;
          
@@ -162,6 +162,7 @@
          //$rf_rd_data2[31:0] = /xreg[$rf_rd_index2]>>1$value;
          
          
+      
          $src1_value[31:0] = $rf_rd_data1;
          $src2_value[31:0] = $rf_rd_data2;
          
@@ -179,7 +180,12 @@
                          $is_bltu ? ($src1_value < $src2_value):
                          $is_bgeu ? ($src1_value >= $src2_value):
                                     1'b0;
+                                    
+      @3
+         $valid_taken_branch = $valid && $taken_branch;
          
+         
+      @1
          //BRANCH INSTRUCTIONS 2
          $br_target_pc[31:0] = $pc +$imm;
          
@@ -203,7 +209,7 @@
    //  o CPU visualization
    |cpu
       m4+imem(@1)    // Args: (read stage)
-      m4+rf(@1, @1)  // Args: (read stage, write stage) - if equal, no register bypass is required
+      m4+rf(@1, @2)  // Args: (read stage, write stage) - if equal, no register bypass is required
       //m4+dmem(@4)    // Args: (read/write stage)
    
    m4+cpu_viz(@4)    // For visualisation, argument should be at least equal to the last stage of CPU logic

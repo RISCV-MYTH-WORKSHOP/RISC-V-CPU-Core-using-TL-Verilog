@@ -45,13 +45,15 @@
                  
          $pc[31:0] = >>1$reset ? 32'b0 :
                      >>3$valid_taken_branch ? >>3$br_target_pc :
+                     >>3$valid_load ? >>3$inc_pc :
                      >>1$inc_pc ;
                      
          //$start = >>1$reset && !$reset;
          
       @3         
-         $valid = !(>>1$valid_taken_branch || >>2$valid_taken_branch) ;
+         $valid = !(>>1$valid_taken_branch || >>2$valid_taken_branch || >>1$valid_load || >>2$valid_load) ;
          
+         $valid_load = $valid && $is_load ;
          
          //FETCH LOGIC
       @1 
@@ -202,8 +204,8 @@
       @3   
          //ALU
          
-         $sltu_rslt = $src1_value | $src2_value ;
-         $sltiu_rslt  = $src1_value < $imm ;
+         $sltu_rslt[31:0] = $src1_value < $src2_value ;
+         $sltiu_rslt[31:0]  = $src1_value < $imm ;
          
          $result[31:0] = $is_andi ? $src1_value & $imm :
                          $is_ori ? $src1_value | $imm :

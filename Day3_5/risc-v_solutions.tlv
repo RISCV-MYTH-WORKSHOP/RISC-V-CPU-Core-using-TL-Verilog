@@ -190,8 +190,18 @@
          $rf_wr_index[4:0] = >>2$valid_load ? >>2$rd : $rd;
          $rf_wr_data[31:0] = >>2$valid_load ? >>2$ld_data : $result;
          
-         //$rf_rd_data1[31:0] = /xreg[$rf_rd_index1]>>1$value;
-         //$rf_rd_data2[31:0] = /xreg[$rf_rd_index2]>>1$value;
+         
+      @4 
+         //MINI 1-R/W MEMORY
+         $dmem_wr_en = $is_s_instr && $valid ;
+         $dmem_addr[3:0] = $result[5:2] ;
+         $dmem_wr_data[31:0] = $src2_value ;
+         $dmem_rd_en = $is_load ;
+         
+      @5   
+         $ld_data[31:0] = $dmem_rd_data ;
+         
+         
          
       @2      
          $src1_value[31:0] = (>>1$rf_wr_index == $rf_rd_index1) && >>1$rf_wr_en ? >>1$result :  
@@ -270,7 +280,7 @@
    |cpu
       m4+imem(@1)    // Args: (read stage)
       m4+rf(@2, @3)  // Args: (read stage, write stage) - if equal, no register bypass is required
-      //m4+dmem(@4)    // Args: (read/write stage)
+      m4+dmem(@4)    // Args: (read/write stage)
    
    m4+cpu_viz(@4)    // For visualisation, argument should be at least equal to the last stage of CPU logic
                        // @4 would work for all labs

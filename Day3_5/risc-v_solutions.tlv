@@ -48,14 +48,20 @@
          $pc[31:0] = >>1$reset ? 32'b0 :
                      >>3$valid_taken_branch ? >>3$br_target_pc :
                      >>3$valid_load ? >>3$inc_pc :
+                     >>3$valid_jump && >>3$is_jal ? >>3$br_target_pc :
+                     >>3$valid_jump && >>3$is_jalr ? >>3$jalr_target_pc :
                      >>1$inc_pc ;
-                     
-         //$start = >>1$reset && !$reset;
+         
+         
          
       @3         
-         $valid = !(>>1$valid_taken_branch || >>2$valid_taken_branch || >>1$valid_load || >>2$valid_load) ;
+         $valid = !(>>1$valid_taken_branch || >>2$valid_taken_branch || 
+                    >>1$valid_load || >>2$valid_load ||  
+                    >>1$valid_jump || >>2$valid_jump) ;
          
          $valid_load = $valid && $is_load ;
+         
+         $valid_jump = $is_jump && $valid ;
          
          //FETCH LOGIC
       @1 
@@ -173,6 +179,10 @@
          $is_andi = $dec_bits ==? 11'bx_111_0010011;
          $is_and = $dec_bits ==? 11'b0_111_0110011;
          
+         $jalr_target_pc[31:0] = $src1_value +$imm ;
+         
+      @3
+         $is_jump = $is_jal || $is_jalr ;
          
          `BOGUS_USE ($is_beq $is_bne $is_blt $is_bge $is_bltu $is_bgeu $is_addi $is_add)
          
@@ -203,8 +213,7 @@
       @5   
          $ld_data[31:0] = $dmem_rd_data ;
          
-         
-         
+                  
       @2      
          $src1_value[31:0] = (>>1$rf_wr_index == $rf_rd_index1) && >>1$rf_wr_en ? >>1$result :  
                              $rf_rd_data1;

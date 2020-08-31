@@ -229,7 +229,7 @@
                          $is_srai ? {{32{$src1_value[31]}}, $src1_value} >> $imm[4:0] :
                          $is_slt ? ($src1_value[31] == $src2_value[31]) ? $sltu_rslt : {31'b0, $src1_value[31]} :
                          $is_slti ? ($src1_value[31] == $imm[31]) ? $sltiu_rslt : {31'b0, $src1_value[31]} :
-                         $is_sra ? {{32{$src1_value[31]}}, $src1_value} > $src2_value[4:0];                       
+                         $is_sra ? {{32{$src1_value[31]}}, $src1_value} > $src2_value[4:0] :                      
                          32'bx ;
          
          

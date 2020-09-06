@@ -11,10 +11,10 @@
    // stimulus support, and Verilator config.
    m4_makerchip_module   // (Expanded in Nav-TLV pane.)
 \TLV
-   $reset = *reset;
+   //$reset = *reset;
    
    |calc
-      @1
+      @0
          $reset = *reset;
          
       @1

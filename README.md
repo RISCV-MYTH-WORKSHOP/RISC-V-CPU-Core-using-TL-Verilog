@@ -6,4 +6,4 @@ Check the folders for assignments for particular days.
 
 
 # Final CPU Core Implemetation Diagram
-![](Day3_5/Final_Output_for_RISC-V Implemented_CPU_Core.JPG)
+![](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)

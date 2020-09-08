@@ -76,15 +76,13 @@ This section contains sample program already written just to show the flow of ho
 4. To list the contents of the directory, type : 
 `$ls -ltr`
 
-![](Snaps/gitclone_riscv_collaterals) 
+![](Snaps/gitclone_riscv_collaterals.JPG) 
 
 5. To view the RISC-V CPU code (for picorv32) written in Verilog :
 `$vim picorv32.v` .  This contains the entire verilog netlist.
 
 6. To view the testbench file:
-`$vim testbench.v` .  
-
-This is where we read the hexfile. Scroll down to see the line : **$readmemh("firmware.hex",memory)**
+`$vim testbench.v` .  This is where we read the hexfile. Scroll down to see the line : **$readmemh("firmware.hex",memory)**
 
 ![](Snaps/firmware_file_called_inside_tesbench.JPG)
 

@@ -9,10 +9,10 @@ Day 2 of the workshop included the following:
 
 ## Documentation
 We try to implement the same program "sum of numbers from 1 to n" in a different method by taking the advantage of ABI interface and function calls.
-1. There is the main C program containing the code for the summation of numbers from 1 to n.
-2. We modify it and through the C program we make some funtion calls to the Assembly Language Program trhough the registers a0 and a1.
-3. We write the assembly language program in thr ROSC-V ISA and do the computation.
-4. Finally we send back the final results through the register a0 to the C pogram to get the final output. 
+- There is the main C program containing the code for the summation of numbers from 1 to n.
+- We modify it and through the C program we make some funtion calls to the Assembly Language Program trhough the registers a0 and a1.
+- We write the assembly language program in thr ROSC-V ISA and do the computation.
+- Finally we send back the final results through the register a0 to the C pogram to get the final output. 
 
 
 ![](Snaps/Block_diagram_for_C_to_assembly_code.JPG)
@@ -63,3 +63,48 @@ This section contains sample program already written just to show the flow of ho
 
 ![](Snaps/Block_diagram_to_run_C_program_on_RISC-V_CPU.JPG)
 
+### List of Commands:
+1. We clone the RISC-V workshop collaterals repository into our local machine:
+`$git clone https://github.com/kunalg123/riscv_workshop_collaterals.git`
+
+2. After downloading is complete, move inside the directory.
+`$cd riscv_workshop_collaterals`
+
+3. Move to the labs folder.
+`$cd labs`
+
+4. To list the contents of the directory, type : 
+`$ls -ltr`
+
+![](Snaps/gitclone_riscv_collaterals) 
+
+5. To view the RISC-V CPU code (for picorv32) written in Verilog :
+`$vim picorv32.v` .  This contains the entire verilog netlist.
+
+6. To view the testbench file:
+`$vim testbench.v` .  
+
+This is where we read the hexfile. Scroll down to see the line : **$readmemh("firmware.hex",memory)**
+
+![](Snaps/firmware_file_called_inside_tesbench.JPG)
+
+7. To view the standard script of how do we create the hex file :
+`$vim rv32im.sh` .  This file contains basically all the necessary set of scripts required to convert the C and Assembly code into hex file and load it into the memory, and then run it. 
+
+8. In order to run this shell script file, we have to change the read/write/execute permissions.
+`$chmod 777 rv32im.sh`
+
+9. To run the  script file, type :
+`./rv32im.sh`
+
+10. To view the internals of the firmware hex files:
+For 64-bit : `$vim firmware.hex`
+For 32-bit : `$vim firmware32.hex`  
+
+![](Snaps/firmware_hex_file.JPG)
+
+These files shows how the application software is converted into bitstreams and this firmware file is loaded into the memory through the testbench. This file is then processed by the RISC-V core and finally it displays the output results.
+
+### Final Output snap of Day_3
+
+![](Snaps/rvsim32_output.JPG)

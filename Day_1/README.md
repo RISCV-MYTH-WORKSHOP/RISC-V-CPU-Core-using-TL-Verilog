@@ -1,7 +1,8 @@
 # Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain
 
+## DAY 1 Contents
 Day 1 of the workshop included the following:
-     
+
      1. Introduction to RISC-V basic keywords
      2. Labwork for RISC-V software toolchain
      3. Integer number representation
@@ -44,4 +45,34 @@ Day 1 of the workshop included the following:
    `$spike pk sum_1_to_n.o`
    
 ![](Command_Snaps/spike_command.JPG)
+
+
+### For debugging using RISC-V simulator
+
+1. In order to debug all the assembly set instructions, we do it with the spike debugger. 
+
+   `$spike -d pk sum_1_to_n.o`
+   
+2. In a parallel new tab in the terminal, we open the objdump file , and look out for the address location of the pc (say for main program or any part of the program that we want).
+
+3. After the spike debugger opens, type :
+
+   `:until pc 0 100b0` , where 100b0 is the address location from where we start debugging.
+   
+   `:reg 0 a0`  , To see the contents of the register a0.
+   
+   Press enter to execute the next set of assembly code instructions.
+   
+![](Output_Snaps/spike_debugging_sum_of_n.JPG)
+   
+   
+## Final Output Results for Day_1 of the Workshop
+
+1. Sum of numbers from 1 to n (n=9).
+
+![](Output_Snaps/Ouput_Sum_using_riscv_compiler.JPG)
+
+2. To find the maximum and minimumm number that can be represented using 64-bit unnsigned and signed integer number reperesentation.
+
+![](Output_Snaps/Output_Max_Min_no_using_riscv_n_spike_compiler.JPG)
 

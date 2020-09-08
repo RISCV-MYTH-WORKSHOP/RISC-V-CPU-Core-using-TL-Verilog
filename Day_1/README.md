@@ -8,8 +8,8 @@ Day 1 of the workshop included the following:
      4. Signed and unsigned arithmetic operations
      
     
-**List of commands**
-## For compileing using GNU toolchain
+## List of commands
+### For compiling using GNU toolchain
 
 1. Open a file named sum_1_to_n. using leafpad editor.  
      `$leafpad sum_1_to_n.c`   

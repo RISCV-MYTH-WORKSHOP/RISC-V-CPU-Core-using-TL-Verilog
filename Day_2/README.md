@@ -43,8 +43,12 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 
 ![](Snaps/1to9_custom_output.JPG)
 
-5. To check for the assembly output file:
+5. To check for the assembly language output file:
 `$riscv64-unknown-elf-objdump -d 1to9_custom.c |less`
 
+For Main program:
+![](Snaps/objdump_main.JPG)
  
+For loop :
+![](Snaps/objdump_loop.JPG)
 

@@ -14,15 +14,15 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 4. Finally we send back the final results through the register a0 to the C pogram to get the final output. 
 
 
-![](Day_2/Snaps/Block diagram for C to assembly code.JPG)
+![](Snaps/Block_diagram_for_C_to_assembly_code.JPG)
 
 
 **Complete Algorithm Flowchart for running the C program using Assmbly language**
 
-![](Algorithm Flowchart for C to assembly code.JPG)
+![](Snaps/Algorithm_Flowchart_for_C_to_assembly_code.JPG)
 
 **Snapshot of Modified custom C prorgram and "load.S" Assembly language program**
 
 
-![](Snaps/C code and Assmebly code.jpg)
+![](Snaps/Snap_of_C_code_and_Assmebly_code.jpg)
 

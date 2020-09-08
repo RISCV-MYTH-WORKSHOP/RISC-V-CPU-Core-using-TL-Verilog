@@ -56,10 +56,11 @@ Day 1 of the workshop included the following:
 
 3. After the spike debugger opens, type :
 
-   `:until pc 0 100b0` , where 100b0 is the address location from where we start debugging./n
+   `:until pc 0 100b0` , where 100b0 is the address location from where we start debugging.
+   
    `:reg 0 a0`  , To see the contents of the register a0.
    
-   Press enter to execute the next assembly code instructions.
+   Press enter to execute the next set of assembly code instructions.
    
 ![](Output_Snaps/spike_debugging_sum_of_n.JPG)
    

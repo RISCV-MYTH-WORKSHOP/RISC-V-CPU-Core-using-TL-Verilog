@@ -46,9 +46,9 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 5. To check for the assembly language output file:
 `$riscv64-unknown-elf-objdump -d 1to9_custom.c |less`
 
-For Main program:
+**For Main program:**
 ![](Snaps/objdump_main.JPG)
  
-For loop :
+**For loop:**
 ![](Snaps/objdump_loop.JPG)
 

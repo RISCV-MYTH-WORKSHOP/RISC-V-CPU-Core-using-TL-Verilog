@@ -23,7 +23,9 @@ Day 1 of the workshop included the following:
 ### For compiling using RISC-V simulator
 
 1. Since we have previously created our sum_1_to_n.c program file, now to run the same program using RISC-V simulator:
+
    `$riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1_to_n.o sum_1_to_n.c`
+   
     Command info: riscv64-unknown-elf-gcc => RISC-V compiler  , -O1 => Compiler option  , -mabi=lp64 => ABI of long int pointer  , -march=rv64i => architecture-64bit , -o => output ,  sum_1_to_n.o => object file , sum_1_to_n.c => C program file
  
 

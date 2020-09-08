@@ -30,7 +30,7 @@ Day 1 of the workshop included the following:
     
 2. In order to see what is the assembly code for the C program that we are running:
 
-   `$riscv64-unknown-elf-objdump -d sum_1_to_n.o | less
+   `$riscv64-unknown-elf-objdump -d sum_1_to_n.o | less`
    
    ![] (https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Day_1/Command_Snaps/objdump_command.JPG)
 

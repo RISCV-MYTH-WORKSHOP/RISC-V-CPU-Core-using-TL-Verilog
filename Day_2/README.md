@@ -1,4 +1,4 @@
-Day 2: Introduction to ABI and basic verification flow
+# Day 2: Introduction to ABI and basic verification flow
 
 Day 2 of the workshop included the following:
 

@@ -32,7 +32,7 @@ Day 1 of the workshop included the following:
 
    `$riscv64-unknown-elf-objdump -d sum_1_to_n.o | less`
    
-![] (Command_Snaps/objdump_command.JPG)
+![](Command_Snaps/objdump_command.JPG)
 
  
 

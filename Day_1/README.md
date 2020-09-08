@@ -1,7 +1,8 @@
 # Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain
 
+## DAY 1 Contents
 Day 1 of the workshop included the following:
-     
+
      1. Introduction to RISC-V basic keywords
      2. Labwork for RISC-V software toolchain
      3. Integer number representation
@@ -65,3 +66,13 @@ Day 1 of the workshop included the following:
 ![](Output_Snaps/spike_debugging_sum_of_n.JPG)
    
    
+## Final Output Results for Day_1 of the Workshop
+
+1. Sum of numbers from 1 to n (n=9).
+
+![](Output_Snaps/Ouput_Sum_using_riscv_compiler.JPG)
+
+2. To find the maximum and minimumm number that can be represented using 64-bit unnsigned and signed integer number reperesentation.
+
+![](Output_Snaps/Output_Max_Min_no_using_riscv_n_spike_compiler.JPG)
+

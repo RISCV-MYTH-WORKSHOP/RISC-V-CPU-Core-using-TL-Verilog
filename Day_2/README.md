@@ -7,6 +7,7 @@ Day 2 of the workshop included the following:
     2. Lab work using ABI function calls
     3. Basic verification flow using iverilog
 
+## Documentation
 We try to implement the same program "sum of numbers from 1 to n" in a different method by taking the advantage of ABI interface and function calls.
 1. There is the main C program containing the code for the summation of numbers from 1 to n.
 2. We modify it and through the C program we make some funtion calls to the Assembly Language Program trhough the registers a0 and a1.
@@ -25,4 +26,23 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 
 
 ![](Snaps/Snap_of_C_code_and_Assmebly_code.jpg)
+
+### List of Commands
+
+1. Write the modified custom C code.
+`$leafpad 1to9_custom.c`
+
+2. Write the assembly language code for summation of numbers from 1 to n using RISC-V ISA.
+`$leadpad load.S`
+
+3. To compile the C code and assembly lang code using riscv compiler:
+`$riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.S`
+
+4. To compile and debug using spike:
+`$spike -d pk 1to9_custom.o`
+
+5. To check for the assembly outfule file:
+`$riscv64-unknown-elf-objdump -d 1to9_custom.c |less`
+
+ 
 

@@ -41,7 +41,9 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 4. To compile and debug using spike:
 `$spike -d pk 1to9_custom.o`
 
-5. To check for the assembly outfule file:
+![](Snaps/1to9_custom_output.JPG)
+
+5. To check for the assembly output file:
 `$riscv64-unknown-elf-objdump -d 1to9_custom.c |less`
 
  

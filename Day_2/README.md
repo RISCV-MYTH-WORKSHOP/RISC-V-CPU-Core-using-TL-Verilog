@@ -14,7 +14,8 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 4. Finally we send back the final results through the register a0 to the C pogram to get the final output. 
 
 
-![](Snaps/Block diagram for C to assembly code.JPG)
+![](Day_2/Snaps/Block diagram for C to assembly code.JPG)
+
 
 **Complete Algorithm Flowchart for running the C program using Assmbly language**
 

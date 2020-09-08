@@ -45,3 +45,22 @@ Day 1 of the workshop included the following:
    
 ![](Command_Snaps/spike_command.JPG)
 
+
+### For debugging using RISC-V simulator
+
+1. In order to debug all the assembly set instructions, we do it with the spike debugger. 
+
+   `$spike -d pk sum_1_to_n.o`
+   
+2. In a parallel new tab in the terminal, we open the objdump file , and look out for the address location of the pc (say for main program or any part of the program that we want).
+
+3. After the spike debugger opens, type :
+
+   `:until pc 0 100b0` , where 100b0 is the address location from where we start debugging./n
+   `:reg 0 a0`  , To see the contents of the register a0.
+   
+   Press enter to execute the next assembly code instructions.
+   
+![](Output_Snaps/spike_debugging_sum_of_n.JPG)
+   
+   

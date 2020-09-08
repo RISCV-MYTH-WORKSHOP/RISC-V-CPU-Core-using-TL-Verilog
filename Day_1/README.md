@@ -11,17 +11,17 @@ Day 1 of the workshop included the following:
 **List of commands**
 1. Open a file named sum_1_to_n. using leafpad esitor.
   
-   $leafpad sum_1_to_n.c
+     `$leafpad sum_1_to_n.c`
    
 2. Write your C code for sum of numbers from 1 to  n (say n =9).
 
 3. Compile using GNU compiler
    
-   $gcc sum_1_to_n.c
+    ` $gcc sum_1_to_n.c`
    
 4. Run the compiled object file (Default object file formed with the name a.out).
 
-   $./a/out
+     `$./a/out`
 
 
 

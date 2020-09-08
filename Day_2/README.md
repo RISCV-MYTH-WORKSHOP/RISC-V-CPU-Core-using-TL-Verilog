@@ -52,3 +52,14 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 **For loop:**
 ![](Snaps/objdump_loop.JPG)
 
+## How do we run the same program on RISC-V CPU
+
+This section contains sample program already written just to show the flow of how to run a program on a RISC-V CPU core.
+- We have a RISC-V CPU core written in Verilog and an already written testbench code for the same.
+- The entire C program will be converted into a hex format and and will be loaded into memory.
+- The CPU will then read the contents of the memory, process it and finally display the output result of sum of numbers from 1 to n.
+
+**Block Diagram to run C program on RISC-V CPU**
+
+![](Snaps/Block_diagram_to_run_C_program_on_RISC-V_CPU.JPG)
+

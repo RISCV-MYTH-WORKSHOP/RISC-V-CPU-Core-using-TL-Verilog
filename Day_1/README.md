@@ -36,7 +36,12 @@ Day 1 of the workshop included the following:
    
 ![](Command_Snaps/objdump_command.JPG)
 
-3. When the objdump file opens, type **/main** (since we are interested in the main program of the code, and press n to go to next instantiation of main in the file.
+3. When the objdump file opens, type **/main** (since we are interested in the main program of the code, and press n to go to next instantiation of main in the file).
 
 ![](Output_Snaps/objdump_main_using_Ofast.JPG)
+
+4. For running the object file compiled by RISC-V compiler, we are using the spike simulator.
+   `$spike pk sum_1_to_n.o`
+   
+![](Command_Snaps/spike_command.JPG)
 

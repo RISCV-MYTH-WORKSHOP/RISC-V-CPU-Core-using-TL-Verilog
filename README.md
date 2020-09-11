@@ -91,9 +91,9 @@ For detailed steps regarding the source code, compilation, simulation and debugg
 
 
 
-# ABI 
+# Application Binary Interface (ABI) 
 
-- The **Application Binary Interface** , or also called as System call interface is used by the application programmer to directly access the registers of the RISC-V architecture via system calls. In other words, if the applpication programmer wants to access the harware resources of the processor, it has to do via the resgiters, and the way it does it, is thorugh ABI or system calls. RISC-V ABI defines standard functions for registers which allows for software interoperability. 
+- The **Application Binary Interface(ABI)** , or also called as System call interface is used by the application programmer to directly access the registers of the RISC-V architecture via system calls. In other words, if the applpication programmer wants to access the harware resources of the processor, it has to do via the resgiters, and the way it does it, is thorugh ABI or system calls. RISC-V ABI defines standard functions for registers which allows for software interoperability. 
 
 - The ABI or application binary interface, consists of 2 parts – one is the set of all user instructions itself, and second is the system call interface through the operating system layer.
 
@@ -102,8 +102,8 @@ For detailed steps regarding the source code, compilation, simulation and debugg
 - In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
 
 - There are two methods to load data in to the registers:
-   1. **By loading directly into the registers:** But since there are only limited a,ount of registers available, so at a time only few bit numbers can be loaded.
-   2. **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
+     1. **By loading directly into the registers:** But since there are only limited a,ount of registers available, so at a time only few bit numbers can be loaded.
+     2. **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
 
 
 Below mentioned is the RISC-V calling convention. [Image source:riscv](https://riscv.org/).
@@ -113,24 +113,28 @@ Below mentioned is the RISC-V calling convention. [Image source:riscv](https://r
 
 **Types of Instructions**
 The instructions which operate on the signed and unsigned integer numbers are called as Base Interger Instructions. There are about 47 types of Base Insterger Instrcutions in the RISC-V architecture. Some of them are mentioned below:
-  - The instructions that operates only on registers are called as **R-type Instructions**. Example: add x8, x24, x8
-  - The instructions that operates on registers and immediate values are called as **I-type Instructions**. Example: ld x8, 16(x32)
-  - The instructions that operates only on the source registers and the immediate values, and also used for storing purposes are called as **S-type Instructions**. Example: sd x8, 8(x23)
+  - The instructions that operates only on registers are called as **R-type Instructions**. 
+  Example: add x8, x24, x8
+  - The instructions that operates on registers and immediate values are called as **I-type Instructions**. 
+  Example: ld x8, 16(x32)
+  - The instructions that operates only on the source registers and the immediate values, and also used for storing purposes are called as **S-type Instructions**.
+  Example: sd x8, 8(x23)
   
 Since all the registers that are being accessed by R-type, or I-type or S-type Instructions are of 5 bits, hence total no of register that can be represented are 2^5 = 32. This is the reason why there are 32 registers (i.e. x0 - x31) present in the RISC-V architecture.
 
 
 For testing the ABI call using 1to9_custom.c and load.S in order to find sum of numbers from 1 to 9, we refere to the Day_2 folder.
+Testing ABI call using [1to9_custom.c](https://github.com/aditikhare11/RISC-V-Core/blob/master/Codes/1to9_custom.c) and [load.S](https://github.com/aditikhare11/RISC-V-Core/blob/master/Codes/load.S) to find sum of numbers from 1 to 9.
 
 
 
 # Makerchip Platform
 
-[Makerchip](http://makerchip.com/) is a free online environment by Redwood EDA for developing high-quality integrated circuits. The online platform can be used to code, compile, simulate and debug Verilog designs from a browser. It gives you a place to create any digital sequential logic you can dream up faster than you ever thought was possible, all within your browser. The breakthrough in productivity is two fold:
+Makerchip is a free online environment by Redwood EDA for developing high-quality integrated circuits. The online platform can be used to code, compile, simulate and debug Verilog designs from a browser. It gives you a place to create any digital sequential logic you can dream up faster than you ever thought was possible, all within your browser. The breakthrough in productivity is two fold:
   - A tight integration of design, simulation, and debug capabilities
   - Support for Transaction-Level Verilog (TL-Verilog), in addition to Verilog and synthesizable SystemVerilog.
   
-For basic tutorial steps , you can refer [here]. For complete details, you can browse [Makerchip](http://makerchip.com/).  
+For basic tutorial steps , you can refer [here]. For complete details, you can browse [Makerchip Platform](http://makerchip.com/).  
 
 # TL-Verilog
 Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog that supports a new design methodology, called transaction-level design. For this project, TL-Verilog has been chosed as the HDL of choice for the design. Projects on Makerchip can be completely designed using TL-Verilog. Transaction Level - Verilog standard is an extension of Verilog which has various advantages like simpler syntax, shorter codes and easy pipelining. You can learn more about TL-Verilog [here](http://tl-x.org/).
@@ -240,78 +244,20 @@ m4_asm(LW, r17, r0, 10000)
 
 The snapshot of the final core can be seen below. [Click here](http://makerchip.com/sandbox/0wpfLhK8v/0vgh7NL) to view the final design on Makerchip. Additionally you can also paste the code on this [link](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Final%20Pipelined%20RISC-V%20Core) directly on [makerchip.com](http://makerchip.com/) to view the project.
 
-![](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
+![Final Core](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
 
 ![Final Core](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/FinalCore.PNG)
 
 
-
-
-
-## Getting Started with the Makerchip Platform
-
-1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Makerchip.JPG)
-    
-2. A new new window opens. This comes with a shell to write TL Verilog Code.
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Makerchip_IDE.JPG)
-    
-3. In order to load a sample example code, click on Tutorials -> Examples. Under table of contents click on Pythagorean Theorem Pipeline, and then click on the blue color tab named “Pythagorean Theorem” to load the project.
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Tutorials.JPG)
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Examples.JPG)
-    
-4. List of various tabs available for the user:
-     - The **Editor** tab shows the source code for the program.
-     - The **NAV-TLV** tab shows the expanded form of the complete code that is used for debugging.
-     - The **Log** tab shows the logs and the list of errors in the project, if any.
-     - The **Diagram** tab shows the output schematic diagram generated for the source code. 
-     - The **Waveform** tab shows us the output waveform generated out of the program.
-          
-5. In order to zoom in/out the diagram or the waveform , hoover the mouse over them and scroll up/down.
-    
-6. If you click on any signal on the waveform, it will get highlighted on the diagram and the NAVTLV tab as well , which we can look for debugging.
-    
-7. On the top right corner , there is Window like pane available which we can select to split the tabs on the screen, horizontally or vertically.
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Split_screen.JPG)
-    
-8. While present on the Editor tab, on the top right corner, Click on “E”. Then click on “Compile/Sim” to compile the program. (You can use “Ctrl+Enter” as a shortcut for the same).
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Compile.JPG)
-
-    
-9. There is also an option to check for comparision between the source code required for a design written in TL-Verilog and in System Verilog. Click on “Show Verilog” to see the results.
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Show_Verilog.JPG)
-    
-10. In order to save the project click on “Save as New Project” present on the top right corner. The saving of a project in Makerchip platform is kind of primitive, it doesn’t save the entire project file in any database. It just generates a kind of url , which we can bookmark/saved it outside, in order to  return back to it later.
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Save_project.JPG)
-    
-11. Always make sure to clone your project before statring something new, so as to avoid the previous project file getting overridden. For this, Click on "Project -> Clone project(New URL)".
-
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Clone_project.JPG)
-
-
-
-
-# Contributors
-
-- Ashutosh Sahoo
-- Kunal Ghosh
-- Steve Hoover
-
 # Acknowlegedgements
 
-- Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd.
-- Steve Hoover, Founder, Redwood EDA 
+- [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+- [Steve Hoover](https://github.com/stevehoover), Founder, Redwood EDA
+- [Shivam Potdar](https://github.com/shivampotdar), GSoC 2020 @fossi-foundation
+- [Vineet Jain](https://github.com/vineetjain07), GSoC 2020 @fossi-foundation
 
 # Contact Information
 
-- Ashutosh Sahoo, BTech Graduate , NIT Rourkela ashutosh0358.sahoo@gmail.com
-- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
-- Steve Hoover, Founder, Redwood EDA 
+- Ashutosh Sahoo, BTech Graduate , NIT Rourkela (Email: ashutosh0358.sahoo@gmail.com)
+- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. (Email: kunalghosh@gmail.com)
+- Steve Hoover, Founder, Redwood EDA (Email: steve.hoover@redwoodeda.com)

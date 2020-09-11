@@ -1,4 +1,4 @@
-# RISC-V besed MYTH Workshop - Building a RISC-V Core using TL-Verilog
+# RISC-V based MYTH Workshop - Building a RISC-V Core using TL-Verilog
 
 This repository contains all the information regarding the 5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop, offered by for VLSI System Design (VSD) and Redwood EDA. In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform. Find below the accompanying details.
 
@@ -13,15 +13,18 @@ Check the individual day folders for the source codes and assignments on the res
   - [ISA base and extensions](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#isa-base-and-extensions)
   - [RISC-V International](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#risc-v-international)
   
-- [Setting up the environment](https://github.com/aditikhare11/RISC-V-Core#setting-up-the-environment)
-- [ABI](https://github.com/aditikhare11/RISC-V-Core#abi)
-- [Makerchip and TL-Verilog](https://github.com/aditikhare11/RISC-V-Core#makerchip-and-tl-verilog)
-  - [Introduction](https://github.com/aditikhare11/RISC-V-Core#a-introduction)
-  - [Implementation of a RISC-V core](https://github.com/aditikhare11/RISC-V-Core#b-implementation-of-a-risc-v-core)
-  - [Testing the core with a testbench](https://github.com/aditikhare11/RISC-V-Core#c-testing-the-core-with-a-testbench)
-  - [Pipelining the RISC-V core](https://github.com/aditikhare11/RISC-V-Core#d-pipelining-the-risc-v-core)
+- [Setting up the environment](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#setting-up-the-environment---installation-of-workshop-collaterals-files)
+- [Application Binary Interface (ABI)](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#application-binary-interface-abi)
+- [Makerchip Platform](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#makerchip-platform)
+- [TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#tl-verilog)
+- [Implementation of the RISC-V CPU Core] (https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#implementation-of-the-risc-v-cpu-core)
+  - [Different components of a RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#a-different-components-of-a-risc-v-cpu-core)  
+  - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#b-testing-the-core-with-a-testbench)
+  - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#c-pipelining-the-risc-v-core)
+  - [Final CPU Core Implemetation Diagram](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#final-cpu-core-implemetation-diagram)
 - [Future work](https://github.com/aditikhare11/RISC-V-Core#future-work)
-- [Acknowledgements](https://github.com/aditikhare11/RISC-V-Core#acknowledgements)
+- [Acknowledgements](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#acknowlegedgements)
+- [Contact Information](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#contact-information)
 
 
 # Introduction to RISC-V ISA
@@ -244,6 +247,10 @@ m4_asm(LW, r17, r0, 10000)
 The snapshot of the final core can be seen below. [Click here](http://makerchip.com/sandbox/0wpfLhK8v/0vgh7NL) to view the final design on Makerchip. Additionally you can also paste the code on this [link](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Final%20Pipelined%20RISC-V%20Core) directly on [makerchip.com](http://makerchip.com/) to view the project.
 
 ![Final Core](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
+
+# Future Work 
+
+This project was done as a part of the [**RISC-V based MYTH (Microprocessor for You in Thirty Hours)**](https://www.vlsisystemdesign.com/riscv-based-myth/) workshop conducted by **Kunal Ghosh** and **Steve Hoover**. The current project implements almost the entire RV32I base instruction set. Future work involves modifying the current design to implement support for the remaining operations and also implementation of other standard extensions like M, F and D. 
 
 
 # Acknowlegedgements

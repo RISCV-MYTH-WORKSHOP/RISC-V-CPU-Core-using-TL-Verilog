@@ -27,6 +27,33 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 
 ![](Snaps/Snap_of_C_code_and_Assmebly_code.jpg)
 
+
+On This day, we delved deep into the lower layers on how the higher layer instructions in c are translated to machine understandable codes. 
+  Just like how application program interface (API) is used by application programs to access the standard libraries, an application binary interface or system     call interface is utilised hardware resources . The ISA is inherently divided into two parts: *User & System ISA* and *User ISA*  the latter is available to the   user directly by system calls. 
+  
+  Now, how does the ABI access the hardware resources? 
+  - It uses different registers(32 in number) which are each of width `XLEN = 32 bit` for RV32 (~`XLEN = 64 for RV64`) . On a higher level of abstraction these       registers are accessed by their respective ABI names.
+  
+  For base integer instructions there are broadly 3 types of of such registers:
+  - I-type : For instructions having immediate values as operands.
+  - R-type : For instructions having only registers as operands.
+  - S-type : For instructions used for storing operations.
+  
+## Lab 1 : ASM & ABI function Calls
+  A new program is made by modifying the original `sum1ton.c` and adding ASM and ABI function call .The code can be found [here](https://github.com/iamrk-vlsi/RISC-V-MYTH-Workshop/tree/master/DAY2/Day2_lab1)
+  - Command used to compile the program is `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.S`. 
+  - To view to disassemble and view the object file in readable format, we use `riscv64-unknown-elf-objdump -d 1to9_custom.o|less`.
+  - To run we use spike which is a RISC-V simulator, following is the command `spike pk 1to9_custom.o`.
+  
+  **Output on console**
+![](DAY2/day2_lab1_asm.png)
+
+## Lab 2 : To run and verify on a RISC-V Core
+  An RTL implementation of a RISC-V core has been provided to us and we run the above program using the scripts provided to using iverilog simulator, just to observe  the behaviour of the program in hardware. A similar core would be implemented by us in the forthcoming days.
+  
+  **Output on console**
+  ![](DAY2/day2_lab2_iverilog_count_3.png)
+
 ### List of Commands
 
 1. Write the modified custom C code.

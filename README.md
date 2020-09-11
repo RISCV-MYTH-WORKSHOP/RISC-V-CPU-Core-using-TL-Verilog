@@ -5,6 +5,26 @@ This repository contains all the information regarding the 5-day RISC-V based CP
 Check the folders for assignments for particular days.
 
 
+# Installation of Workshop Collaterals 
+
+For the installation of all the necessary collaterals(compilers and toolchains) required for the workshop into your local machine, follow the below instructions: 
+
+1. Go to https://github.com/kunalg123/riscv_workshop_collaterals 
+
+2. You can either download the repository zip file into you local machine or you can type in the following command in your terminal in the local machine : 
+    $git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
+
+3. After downloading the repository , get inside the riscv_workshop_collaterals directory.
+
+    $cd riscv_workshop_collaterals
+
+4. For installation of the complete toolchain, run the "run.sh" shell script. For this, type the following command:
+
+    $./run.sh
+    
+5. After installation of all the required files, you can move on to perform the respective labs assignments.
+
+
 ## Getting Started with the Makerchip Platform
 
 1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.

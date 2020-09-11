@@ -9,17 +9,17 @@ Check the folders for assignments for particular days.
 
 1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
 
-![](Documentation/Makerchip IDE/Makerchip.JPG)
+![](Documentation/Makerchip \IDE/Makerchip.JPG)
     
 2. A new new window opens. This comes with a shell to write TL Verilog Code.
 
-![](Documentation/Makerchip IDE/Makerchip ide.JPG)
+![](Documentation/Makerchip \IDE/Makerchip \ide.JPG)
     
 3. In order to load a sample example code, click on Tutorials -> Examples. Under table of contents click on Pythagorean Theorem Pipeline, and then click on the blue color tab named “Pythagorean Theorem” to load the project.
 
-![](Documentation/Makerchip IDE/Tutorials.JPG)
+![](Documentation/Makerchip \IDE/Tutorials.JPG)
 
-![](Documentation/Makerchip IDE/Examples.JPG)
+![](Documentation/Makerchip \IDE/Examples.JPG)
     
 4. List of various tabs available for the user:
      - The **Editor** tab shows the source code for the program.
@@ -34,7 +34,7 @@ Check the folders for assignments for particular days.
     
 7. On the top right corner , there is Window like pane available which we can select to split the tabs on the screen, horizontally or vertically.
 
-![](Documentation/Makerchip IDE/Split screen.JPG)
+![](Documentation/Makerchip \IDE/Split \screen.JPG)
     
 8. While present on the Editor tab, on the top right corner, Click on “E”. Then click on “Compile/Sim” to compile the program. (You can use “Ctrl+Enter” as a shortcut for the same).
 

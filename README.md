@@ -38,13 +38,20 @@ Check the folders for assignments for particular days.
     
 8. While present on the Editor tab, on the top right corner, Click on “E”. Then click on “Compile/Sim” to compile the program. (You can use “Ctrl+Enter” as a shortcut for the same).
 
+![](Documentation/Makerchip_IDE/Compile.JPG)
+
     
 9. There is also an option to check for comparision between the source code required for a design written in TL-Verilog and in System Verilog. Click on “Show Verilog” to see the results.
+
+![](Documentation/Makerchip_IDE/Show_Verilog.JPG)
     
 10. In order to save the project click on “Save as New Project” present on the top right corner. The saving of a project in Makerchip platform is kind of primitive, it doesn’t save the entire project file in any database. It just generates a kind of url , which we can bookmark/saved it outside, in order to  return back to it later.
+
+![](Documentation/Makerchip_IDE/Save_project.JPG)
     
 11. Always make sure to clone your project before statring something new, so as to avoid the previous project file getting overridden. For this, Click on "Project -> Clone project(New URL)".
 
+![](Documentation/Makerchip_IDE/Clone_project.JPG)
 
 
 

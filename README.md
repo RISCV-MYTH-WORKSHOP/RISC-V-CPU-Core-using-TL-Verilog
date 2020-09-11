@@ -1,4 +1,4 @@
-# RISC-V_MYTH_Workshop - Building a RISC-V Core using TL-Verilog
+# RISC-V besed MYTH Workshop - Building a RISC-V Core using TL-Verilog
 
 This repository contains all the information regarding the 5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop, offered by for VLSI System Design (VSD) and Redwood EDA. In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform. Find below the accompanying details.
 
@@ -6,7 +6,7 @@ This repository contains all the information regarding the 5-day RISC-V based CP
 Check the individual day folders for the source codes and assignments on the respective days.
 
 
-## Table Of Contents
+# Table Of Contents
 
 - [Introduction to RISC-V ISA](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#introduction-to-risc-v-isa)
   - [What’s Different About RISC-V?](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#whats-different-about-risc-v)
@@ -87,50 +87,68 @@ In order to understand RISC-V ISA and work on the implementation, you will need 
     
 5. After installation of all the required files, you can move on to perform the compilation and simulation of your codes.
 
-For detailed steps regarding the source code, compilation, simulation and debugging, visit Day1 and Day2 folders.
-
+For detailed steps regarding the source code, compilation, simulation and debugging, visit Day_1 and Day_2 folders.
 
 
 
 # ABI 
 
-**Application Binary Interface** aka system call interface is used by the application program to access registers. RISC-V ABI defines standard functions for registers which allows for software interoperability. 
+- The **Application Binary Interface** , or also called as System call interface is used by the application programmer to directly access the registers of the RISC-V architecture via system calls. In other words, if the applpication programmer wants to access the harware resources of the processor, it has to do via the resgiters, and the way it does it, is thorugh ABI or system calls. RISC-V ABI defines standard functions for registers which allows for software interoperability. 
 
-In RISC-V specification there are 32 registers from x(0) to x(31) whose width is defined by XLEN which can be 32/64  for RV32/RV64 respectively. 
+- The ABI or application binary interface, consists of 2 parts – one is the set of all user instructions itself, and second is the system call interface through the operating system layer.
 
-The data can be loaded from memory to registers or directly sent. Memory is byte addressable. RISC-V belongs to the little endian memory addressing system. 
+- The RISC-V architecture has 32 registers from x(0) to x(31) whose width is defined by XLEN which can be 32/64  for RV32/RV64 respectively. Application programmer can access each of these 32 registers through its ABI name.
 
-Here is the RISC-V calling convention. [Image source:riscv](https://riscv.org/).
+- In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
+
+- There are two methods to load data in to the registers:
+   1. **By loading directly into the registers:** But since there are only limited a,ount of registers available, so at a time only few bit numbers can be loaded.
+   2. **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
+
+
+Below mentioned is the RISC-V calling convention. [Image source:riscv](https://riscv.org/).
 
 ![ABI](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/ABI.PNG)
 
-Testing ABI call using [1to9_custom.c](https://github.com/aditikhare11/RISC-V-Core/blob/master/Codes/1to9_custom.c) and [load.S](https://github.com/aditikhare11/RISC-V-Core/blob/master/Codes/load.S) to find sum of numbers from 1 to 9. 
 
-Commands:
+**Types of Instructions**
+The instructions which operate on the signed and unsigned integer numbers are called as Base Interger Instructions. There are about 47 types of Base Insterger Instrcutions in the RISC-V architecture. Some of them are mentioned below:
+  - The instructions that operates only on registers are called as **R-type Instructions**. Example: add x8, x24, x8
+  - The instructions that operates on registers and immediate values are called as **I-type Instructions**. Example: ld x8, 16(x32)
+  - The instructions that operates only on the source registers and the immediate values, and also used for storing purposes are called as **S-type Instructions**. Example: sd x8, 8(x23)
+  
+Since all the registers that are being accessed by R-type, or I-type or S-type Instructions are of 5 bits, hence total no of register that can be represented are 2^5 = 32. This is the reason why there are 32 registers (i.e. x0 - x31) present in the RISC-V architecture.
 
-```
-riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.S
-spike pk 1to9_custom.o
-```
 
-![ABI-call](https://github.com/aditikhare11/RISC-V-Core/blob/master/Outputs/abicall.png)
+For testing the ABI call using 1to9_custom.c and load.S in order to find sum of numbers from 1 to 9, we refere to the Day_2 folder.
 
-# Makerchip and TL-Verilog
 
-## A. Introduction
 
-[Makerchip](http://makerchip.com/) is a free online environment by Redwood EDA for developing high-quality integrated circuits. The online platform can be used to code, compile, simulate and debug Verilog designs from a browser.  
+# Makerchip Platform
 
-TL-Verilog was used as the HDL of choice for this project. Projects on Makerchip can be completely designed using TL-Verilog. Transaction Level - Verilog standard is an extension of Verilog which has various advantages like simpler syntax, shorter codes and easy pipelining. You can learn more about TL-Verilog [here](http://tl-x.org/).
+[Makerchip](http://makerchip.com/) is a free online environment by Redwood EDA for developing high-quality integrated circuits. The online platform can be used to code, compile, simulate and debug Verilog designs from a browser. It gives you a place to create any digital sequential logic you can dream up faster than you ever thought was possible, all within your browser. The breakthrough in productivity is two fold:
+  - A tight integration of design, simulation, and debug capabilities
+  - Support for Transaction-Level Verilog (TL-Verilog), in addition to Verilog and synthesizable SystemVerilog.
+  
+For basic tutorial steps , you can refer [here]. For complete details, you can browse [Makerchip](http://makerchip.com/).  
+
+# TL-Verilog
+Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog that supports a new design methodology, called transaction-level design. For this project, TL-Verilog has been chosed as the HDL of choice for the design. Projects on Makerchip can be completely designed using TL-Verilog. Transaction Level - Verilog standard is an extension of Verilog which has various advantages like simpler syntax, shorter codes and easy pipelining. You can learn more about TL-Verilog [here](http://tl-x.org/).
 
 Timing abstract can be done in TL-Verilog. This model is specified for pipelines where the sequential elements are generated by tools from the pipelined specification. This allows for easy retiming without the risk of introduction of any functional bugs. More information on timing abstract in TL-Verilog can be found in the IEEE paper ["Timing-Abstract Circuit Design in Transaction-Level Verilog" by Steven Hoover](https://ieeexplore.ieee.org/document/8119264).
 
 
-## B. Implementation of a RISC-V core
+# Implementation of the RISC-V CPU Core
 
 This section will walk through the different implementation steps to achieve the RISC-V core. 
 
 **_Please note: Click on the step to be redirected to the code associated with that step. The code can be directly pasted on Makerchip.com to view the design._**
+
+## A. Different components of a RISC-V CPU Core
+
+Example of a RISC-V CPU Core block diagram.
+
+The various components involved in a basic RISC-V CPU Core are as follows: 
 
 **[1. Program Counter and Program Counter adder](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Next%20PC)**
 
@@ -179,7 +197,7 @@ The final step is to add support for branch instructions. A branch target pc has
 
 ![Core](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Non-pipelined%20core.PNG)
 
-## C. Testing the core with a testbench
+## B. Testing the core with a testbench
 
 Now that our implementation is complete, a simple testbench statement can be added to ensure the core is working correctly. 
 When the following line of code is added on Makerchip, the simulation will pass only if the value stored in r10 = sum of numbers from 1 to 9. 
@@ -190,7 +208,7 @@ When the following line of code is added on Makerchip, the simulation will pass 
 In the instruction memory, r10 has been used to store the sum. The simulation passed message can be seen under the "Log" tab and the asm file to compute sum can be viewed in the start under the "Editor" tab
 [Click here](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Core%20with%20testbench) to view to design.  
 
-## D. Pipelining the RISC-V core
+## C. Pipelining the RISC-V core
 
 The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerchip is extremely simple. To define a pipeline use the following syntax:
 ```
@@ -216,7 +234,13 @@ Load/store and jump support is added along with the following two extra lines of
 m4_asm(SW, r0, r10, 10000)
 m4_asm(LW, r17, r0, 10000)
 ```
+
+## Final CPU Core Implemetation Diagram
+
+
 The snapshot of the final core can be seen below. [Click here](http://makerchip.com/sandbox/0wpfLhK8v/0vgh7NL) to view the final design on Makerchip. Additionally you can also paste the code on this [link](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Final%20Pipelined%20RISC-V%20Core) directly on [makerchip.com](http://makerchip.com/) to view the project.
+
+![](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
 
 ![Final Core](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/FinalCore.PNG)
 
@@ -272,10 +296,6 @@ The snapshot of the final core can be seen below. [Click here](http://makerchip.
 
 ![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Clone_project.JPG)
 
-
-
-## Final CPU Core Implemetation Diagram
-![](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
 
 
 

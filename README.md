@@ -8,7 +8,7 @@ Check the folders for assignments for particular days.
 
 RISC-V is an open standard instruction set architecture based on established reduced instruction set computer(RISC) principles. It was first started by Prof. Krste Asanović and graduate students Yunsup Lee and Andrew Waterman in May 2010 as part of the Parallel Computing Laboratory, at UC Berkeley. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use, which provides it a huge edge over other commercially available ISAs. It is a simple, stable, small standard base ISA with extensible ISA support, that has been redefining the flexibility, scalability, extensibility, and modularity of chip designs. This has made it easier and flexible for anyone to build a processor on his own at almost zero cost. 
 
-## What’s Different About RISC-V?**
+## What’s Different About RISC-V?
 
 Comparing to ARM and X86, RISC-V has below advantages:
 
@@ -31,8 +31,8 @@ The RISC-V ISA is defined as a Base integer ISA, which is the basic necessity fo
 
 The base integer instructions set, that exclusively operate on integer numbers, are represented as RV32I/RV64I. The other extensions avaialable are as follows:
 
-  - **RV64M** - Multiply Extension :  These are the Instructions that is used to caluclate multiplication and division.
-  - **RV64F** and RV64D - Single and Double precision floating point extension : These are the instructions used to realize floating point numbers.
+  - **RV64M** - **Multiply Extension** :  These are the Instructions that is used to caluclate multiplication and division.
+  - **RV64F** and **RV64D** - **Single and Double precision floating point extension** : These are the instructions used to realize floating point numbers.
 
 A CPU core that implements all the above type of instructions is called as **"RV64IMFD"** CPU Core.
 

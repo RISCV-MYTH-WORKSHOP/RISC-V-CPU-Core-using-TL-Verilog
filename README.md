@@ -12,15 +12,15 @@ RISC-V is an open standard instruction set architecture based on established red
 
 ![](https://miro.medium.com/max/2556/1*88Zj-QJq48IZTiCGUo5mSQ.png)
 
-   ## What’s Different About RISC-V?
+## What’s Different About RISC-V?
 
-      Comparing to ARM and X86, RISC-V has below advantages:
+   Comparing to ARM and X86, RISC-V has below advantages:
 
-          - **Free:** RISC-V is open-source, there is no need to pay for the IP.
-          - **Simple:** RISC-V is far smaller than other commercial ISAs.
-          - **Modular:** RISC-V has a small standard base ISA, with multiple standard extensions.
-          - **Stable:** Base and first standard extensions are already frozen. There is no need to worry about major updates.
-          - **Extensibility:** Specific functions can be added based on extensions. There are many more extensions are under development, such as Vector.
+   - **Free:** RISC-V is open-source, there is no need to pay for the IP.
+   - **Simple:** RISC-V is far smaller than other commercial ISAs.
+   - **Modular:** RISC-V has a small standard base ISA, with multiple standard extensions.
+   - **Stable:** Base and first standard extensions are already frozen. There is no need to worry about major updates.
+   - **Extensibility:** Specific functions can be added based on extensions. There are many more extensions are under development, such as Vector.
 
 
 ## ISA base and extensions

@@ -7,11 +7,19 @@ Check the folders for assignments for particular days.
 
 ## Getting Started with the Makerchip Platform
 
-1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/
+1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
+
+![](Documentation/Makerchip IDE/Makerchip.JPG)
     
-2. Click on “Launch Makerchip IDE”.  A new new window opens. This comes with a shell to write TL Verilog Code.
+2. A new new window opens. This comes with a shell to write TL Verilog Code.
+
+![](Documentation/Makerchip IDE/Makerchip ide.JPG)
     
 3. In order to load a sample example code, click on Tutorials -> Examples. Under table of contents click on Pythagorean Theorem Pipeline, and then click on the blue color tab named “Pythagorean Theorem” to load the project.
+
+![](Documentation/Makerchip IDE/Tutorials.JPG)
+
+![](Documentation/Makerchip IDE/Examples.JPG)
     
 4. List of various tabs available for the user:
      - The **Editor** tab shows the source code for the program.
@@ -25,8 +33,11 @@ Check the folders for assignments for particular days.
 6. If you click on any signal on the waveform, it will get highlighted on the diagram and the NAVTLV tab as well , which we can look for debugging.
     
 7. On the top right corner , there is Window like pane available which we can select to split the tabs on the screen, horizontally or vertically.
+
+![](Documentation/Makerchip IDE/Split screen.JPG)
     
 8. While present on the Editor tab, on the top right corner, Click on “E”. Then click on “Compile/Sim” to compile the program. (You can use “Ctrl+Enter” as a shortcut for the same).
+
     
 9. There is also an option to check for comparision between the source code required for a design written in TL-Verilog and in System Verilog. Click on “Show Verilog” to see the results.
     

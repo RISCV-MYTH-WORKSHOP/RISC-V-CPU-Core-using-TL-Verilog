@@ -28,3 +28,5 @@ Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog
 
 - Designing of flipflops explicitly is not required. Flipflops are automatically inferred in the process. 
 
+For more references on TL-Verilog, visit the the site: https://www.redwoodeda.com/tl-verilog
+

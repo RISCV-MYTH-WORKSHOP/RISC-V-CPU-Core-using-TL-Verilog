@@ -1,8 +1,10 @@
-# RISC-V_MYTH_Workshop
+# RISC-V_MYTH_Workshop - Building a RISC-V Core using TL-Verilog
 
-This repository contains all the information regarding the 5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop, offered by for VLSI System Design (VSD) and Redwood EDA. The RISC-V CPU Core has been designed using Transaction Level Verilog(TL-Verilog) in addition with the Makerchip Platform. Find below the accompanying details.
+This repository contains all the information regarding the 5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop, offered by for VLSI System Design (VSD) and Redwood EDA. In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform. Find below the accompanying details.
 
-Check the folders for assignments for particular days.
+
+Check the individual day folders for the source codes and assignments on the respective days.
+
 
 # Introduction to RISC-V ISA
 
@@ -10,15 +12,15 @@ RISC-V is an open standard instruction set architecture based on established red
 
 ![](https://miro.medium.com/max/2556/1*88Zj-QJq48IZTiCGUo5mSQ.png)
 
-## What’s Different About RISC-V?
+   ## What’s Different About RISC-V?
 
-Comparing to ARM and X86, RISC-V has below advantages:
+      Comparing to ARM and X86, RISC-V has below advantages:
 
-  - Free: RISC-V is open-source, there is no need to pay for the IP.
-  - Simple: RISC-V is far smaller than other commercial ISAs.
-  - Modular: RISC-V has a small standard base ISA, with multiple standard extensions.
-  - Stable: Base and first standard extensions are already frozen. There is no need to worry about major updates.
-  - Extensibility: Specific functions can be added based on extensions. There are many more extensions are under development, such as Vector.
+          - **Free:** RISC-V is open-source, there is no need to pay for the IP.
+          - **Simple:** RISC-V is far smaller than other commercial ISAs.
+          - **Modular:** RISC-V has a small standard base ISA, with multiple standard extensions.
+          - **Stable:** Base and first standard extensions are already frozen. There is no need to worry about major updates.
+          - **Extensibility:** Specific functions can be added based on extensions. There are many more extensions are under development, such as Vector.
 
 
 ## ISA base and extensions
@@ -40,6 +42,7 @@ A CPU core that implements all the above type of instructions is called as **"RV
 
 ## RISC-V International
 The RISC-V Foundation was founded in 2015 to build an open, collaborative community of software and hardware innovators based on the RISC-V ISA. The Foundation, a non-profit corporation controlled by its members, directed the development to drive the initial adoption of the RISC-V ISA. For more information visit the site : www.riscv.org
+
 
 
 In this workshop, we were given the overview of the software as well as the hardware aspect of the RISC-V core and ISA. In addition to that, hands on labs were also conducted in order to learn by doing, rather than just reading the theory and specifications, or just watching the videos.

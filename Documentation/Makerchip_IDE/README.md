@@ -2,7 +2,7 @@
 
 1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
 
-![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Makerchip.JPG)
+![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip.JPG)
     
 2. A new new window opens. This comes with a shell to write TL Verilog Code.
 

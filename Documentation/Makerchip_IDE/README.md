@@ -1,4 +1,4 @@
-## Getting Started with the Makerchip Platform
+# Getting Started with the Makerchip Platform
 
 1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
 

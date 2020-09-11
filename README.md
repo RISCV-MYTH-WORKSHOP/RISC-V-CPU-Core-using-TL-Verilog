@@ -241,12 +241,9 @@ m4_asm(LW, r17, r0, 10000)
 
 ## Final CPU Core Implemetation Diagram
 
-
 The snapshot of the final core can be seen below. [Click here](http://makerchip.com/sandbox/0wpfLhK8v/0vgh7NL) to view the final design on Makerchip. Additionally you can also paste the code on this [link](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Final%20Pipelined%20RISC-V%20Core) directly on [makerchip.com](http://makerchip.com/) to view the project.
 
 ![Final Core](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
-
-![Final Core](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/FinalCore.PNG)
 
 
 # Acknowlegedgements

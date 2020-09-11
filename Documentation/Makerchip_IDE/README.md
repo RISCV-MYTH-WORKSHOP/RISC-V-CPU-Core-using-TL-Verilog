@@ -1,31 +1,3 @@
-# RISC-V_MYTH_Workshop
-
-This repository contains all the information regarding the 5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop, offered by for VLSI System Design (VSD) and Redwood EDA. The RISC-V CPU Core has been designed using Transaction Level Verilog(TL-Verilog) in addition with the Makerchip Platform. Find below the accompanying details.
-
-Check the folders for assignments for particular days.
-
-
-# Installation of Workshop Collaterals Files
-
-For the installation of all the necessary collaterals files(compilers and toolchains) required for the workshop into your local machine, follow the below instructions: 
-
-1. Go to https://github.com/kunalg123/riscv_workshop_collaterals 
-
-2. You can either download the repository zip file into you local machine or you can type in the following command in your terminal in the local machine : 
-
-    `$git clone https://github.com/kunalg123/riscv_workshop_collaterals.git`
-
-3. After downloading the repository , get inside the riscv_workshop_collaterals directory.
-
-    `$cd riscv_workshop_collaterals`
-
-4. For installation of the complete toolchain, run the "run.sh" shell script. For this, type the following command:
-
-    `$./run.sh`
-    
-5. After installation of all the required files, you can move on to perform the respective labs assignments.
-
-
 ## Getting Started with the Makerchip Platform
 
 1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
@@ -73,8 +45,3 @@ For the installation of all the necessary collaterals files(compilers and toolch
 11. Always make sure to clone your project before statring something new, so as to avoid the previous project file getting overridden. For this, Click on "Project -> Clone project(New URL)".
 
 ![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Clone_project.JPG)
-
-
-
-## Final CPU Core Implemetation Diagram
-![](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)

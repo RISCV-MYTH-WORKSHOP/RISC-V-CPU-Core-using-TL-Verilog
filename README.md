@@ -78,3 +78,22 @@ For the installation of all the necessary collaterals files(compilers and toolch
 
 ## Final CPU Core Implemetation Diagram
 ![](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
+
+
+
+# Contributors
+
+- Ashutosh Sahoo
+- Kunal Ghosh
+- Steve Hoover
+
+# Acknowlegedgements
+
+- Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd.
+- Steve Hoover, Founder, Redwood EDA 
+
+# Contact Information
+
+- Ashutosh Sahoo, BTech Graduate , NIT Rourkela ashutosh0358.sahoo@gmail.com
+- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
+- Steve Hoover, Founder, Redwood EDA 

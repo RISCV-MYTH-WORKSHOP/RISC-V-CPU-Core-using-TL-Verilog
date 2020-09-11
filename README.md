@@ -17,7 +17,7 @@ Check the individual day folders for the source codes and assignments on the res
 - [Application Binary Interface (ABI)](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#application-binary-interface-abi)
 - [Makerchip Platform](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#makerchip-platform)
 - [TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#tl-verilog)
-- [Implementation of the RISC-V CPU Core] (https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#implementation-of-the-risc-v-cpu-core)
+- [Implementation of the RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#implementation-of-the-risc-v-cpu-core)
   - [Different components of a RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#a-different-components-of-a-risc-v-cpu-core)  
   - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#b-testing-the-core-with-a-testbench)
   - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#c-pipelining-the-risc-v-core)

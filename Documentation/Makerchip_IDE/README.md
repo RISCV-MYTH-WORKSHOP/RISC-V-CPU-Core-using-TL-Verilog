@@ -44,4 +44,4 @@
     
 11. Always make sure to clone your project before statring something new, so as to avoid the previous project file getting overridden. For this, Click on "Project -> Clone project(New URL)".
 
-![](Documentation/Makerchip_IDE/Clone_project.JPG)
+![](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Makerchip_IDE/Clone_project.JPG)

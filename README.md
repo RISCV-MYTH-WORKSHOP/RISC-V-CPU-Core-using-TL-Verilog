@@ -22,7 +22,7 @@ Check the individual day folders for the source codes and assignments on the res
   - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#b-testing-the-core-with-a-testbench)
   - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#c-pipelining-the-risc-v-core)
   - [Final CPU Core Implemetation Diagram](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#final-cpu-core-implemetation-diagram)
-- [Future work](https://github.com/aditikhare11/RISC-V-Core#future-work)
+- [Future work](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#future-work)
 - [Acknowledgements](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#acknowlegedgements)
 - [Contact Information](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#contact-information)
 

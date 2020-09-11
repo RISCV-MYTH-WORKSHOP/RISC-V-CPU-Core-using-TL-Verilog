@@ -9,7 +9,7 @@ Check the folders for assignments for particular days.
 
 1. Click on the below link to jump to the Makerchip platform : https://makerchip.com/ . Click on “Launch Makerchip IDE”.
 
-![](Documentation/Makerchip \IDE/Makerchip.JPG)
+![](Documentation/Makerchip IDE/Makerchip.JPG)
     
 2. A new new window opens. This comes with a shell to write TL Verilog Code.
 

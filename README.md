@@ -113,14 +113,14 @@ For detailed steps regarding the source code, compilation, simulation and debugg
      - **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
 
 
-**Register File:** 
+### Register File:
 
 RISC-V contains 32 integer registers and 32 floating point registers. Through the ABI names, we reserve some of these registers for certain purposes. For example, all registers that start with a t for temporary can be used for any purposes. All registers that start with an a for argument are used for arguments passed to a function. All registers that start with s (except sp) for saved are registers that are preserved across function calls.
 
 ![Register_file](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Register_file.JPG)
 
 
-**Types of Instructions:**
+### Types of Instructions:
 
 The instructions which operate on the signed and unsigned integer numbers are called as Base Interger Instructions. There are about 47 types of Base Insterger Instrcutions in the RISC-V architecture. Some of them are mentioned below:
   - The instructions that operates only on registers are called as **R-type Instructions**. 
@@ -148,12 +148,12 @@ Makerchip is a free online environment by Redwood EDA for developing high-qualit
   
 ![Makerchip](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Makerchip.JPG)
   
-For basic tutorial steps around the Makerchip platform, you can refer [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Documentation/Makerchip_IDE). For complete documentation, you can browse [Makerchip Platform](http://makerchip.com/).  
+For basic tutorial steps around the Makerchip platform, you can refer [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Documentation/Makerchip_IDE). For more details, visit the [reference](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#references) section. 
 
 # TL-Verilog
 Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog that supports a new design methodology, called transaction-level design. For this project, TL-Verilog has been chosed as the HDL of choice for the design. Projects on Makerchip can be completely designed using TL-Verilog. Transaction Level Verilog standard is an extension of Verilog which has various advantages like simpler syntax, shorter codes and easy pipelining. Tha main advantage of TL-Verilog over System Verilog is the amount of code reduction in designing even a simple model.
 
-*Below mentioned is a small comparision model between a design written in TL-Verilog and System Verilog
+**_Below mentioned is a small comparision model between a design written in TL-Verilog and System Verilog**
 
 ![TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/TL-Verilog.JPG)
 
@@ -231,11 +231,11 @@ The Arithmetic Logic Unit is the component that computes the result based on the
 
 This step is essential to provide support for instructions that have a destination register (rd) where the output must be stored.  The result of the ALU is written back to the memory using the register_file_write port. The register_file_write_enable depends on the validity of the destination register "rd" . The register_file_write_index then takes the value stored in destination register, rd and loads it into the memory in the location as pointed by the register_file_write_index. Since, in RISC-V architecture, x0 register is a hardwired register, whic is always equal to zero, hence it must be made sure that no write operartion is performed on the x0 register. For this, an additional condition to ignore write operation, if the destinaton register is x0 , has been also added.
 
-**Block diagram of a 2-port Register File, with 2 Read and 1 Write per cycle**
+**Block diagram of a 2-port Register File, with 2 Read and 1 Write per cycle:**
 
 ![Register File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Register_file_rd_wr.JPG)
 
-**General Block Diagram of Register File and ALU**
+**General Block Diagram of Register File and ALU:**
 
 ![Register File n ALU](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Register-file-and-alu.jpg)
 
@@ -287,6 +287,7 @@ Staging in a pipeline is a physical attribute with no impact to behaviour.
 At this point support for register file bypass is provided. All the instructions present in the RV32I base instruction set are implemented apart from FENCE, ECALL and EBREAK. All the instructions implemented are shown in the table below which was obtained from [here](riscv.org). 
 
 **Complete RISC-V 32I Base Instruction Set**
+
 ![ISA](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/RV32I_base_instruction_set.png)
 
 
@@ -316,7 +317,8 @@ m4_asm(LW, r17, r0, 10000)
 [Click here](https://myth2.makerchip.com/sandbox/0rkfAh4Z5/058hZyr) to view the final design on the  Makerchip Platform. Additionally you can also paste the code on the following [link](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day3_5/risc-v_solutions.tlv) directly on [makerchip.com](http://makerchip.com/) to view the complete project.
 
 
-**Final Core Block Diagram**
+### Final Core Block Diagram
+
 ![Final Core](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
 
 

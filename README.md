@@ -16,7 +16,7 @@ This repository contains all the information regarding the **5-day RISC-V based 
 - [Setting up the environment](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#setting-up-the-environment---installation-of-workshop-collaterals-files)
 - [Application Binary Interface (ABI)](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#application-binary-interface-abi)
  - [Register File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#register-file)
- -[Types of Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#types-of-instructions)
+ - [Types of Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#types-of-instructions)
  
 - [Makerchip Platform](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#makerchip-platform)
 - [TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#tl-verilog)
@@ -25,8 +25,8 @@ This repository contains all the information regarding the **5-day RISC-V based 
   - [Different logical blocks of a RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#a-different-logical-blocks-of-a-risc-v-cpu-core)  
   - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#b-testing-the-core-with-a-testbench)
   - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#c-pipelining-the-risc-v-cpu-core)
-  - [Complete list of RSC-V Assmbly Language](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#a-complete-list-of-risc-v-assembly-language)
-  - [Final CPU Core Implemetation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#d-final-risc-v-cpu-core-implementation)
+  - [Complete list of RSC-V Assembly Language](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#d-a-complete-list-of-risc-v-assembly-language)
+  - [Final CPU Core Implemetation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#e-final-risc-v-cpu-core-implementation)
    - [Final Core Block Diagram](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#final-core-block-diagram)
    
 - [Future Work](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#future-work)
@@ -143,7 +143,7 @@ The instructions which operate on the signed and unsigned integer numbers are ca
 Since all the registers that are being accessed by R-type, or I-type or S-type Instructions are of 5 bits, hence total no of register that can be represented are 2^5 = 32. This is the reason why there are 32 registers (i.e. x0 - x31) present in the RISC-V architecture.
 
 
-For testing the ABI call using [1to9_custom.c](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_2/Programs/1to9_custom.c) and [load.S](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_2/Programs/load.S) in order to find sum of numbers from 1 to 9, we refer to the [Day_2](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2) folder.
+For testing the ABI call using [1to9_custom.c](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_2/Programs/1to9_custom.c) and [load.S](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_2/Programs/load.S) in order to find sum of numbers from 1 to 9, refer the [Day_2](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2) folder.
 
 
 # Makerchip Platform
@@ -231,7 +231,7 @@ The two source register fields defined as rs1 and rs2 are fed as inputs to the r
 
 ![File Read](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/8.%20Register%20file%20read%202.JPG)
 
-**[5. Arithmetic and Logic Unit(ALU)](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/ALU%20for%20addition)**
+**[5. Arithmetic and Logic Unit(ALU)](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Codes/ALU.v)**
 
 The Arithmetic Logic Unit is the component that computes the result based on the selected operation. The ALU operates on the contents of the two registers coming out of the register file. It performs the respective arithmetic operation on the two registers, and finally the result of the ALU is written back to the memory using the register file write port. At this point, the code only supports ADD and ADDI operations to execute the test code. All operations will be added at a later step. 
 
@@ -273,7 +273,7 @@ Here, in the instruction memory, register r10 has been used to store the sum val
 
 The ASM file to compute the sum of numbers from 1 to n can be viewed at the start, under the "Editor" tab.
 
-[Click here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Codes/Testbench.v) to view the complete RISC-V CPU Core design, without pipeline, with testbench included..  
+[Click here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Codes/Day_4_Final_Code.v) to view the complete RISC-V CPU Core design, without pipeline, with testbench included..  
 
 ## C. Pipelining the RISC-V CPU Core
 

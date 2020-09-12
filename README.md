@@ -31,7 +31,7 @@ This repository contains all the information regarding the **5-day RISC-V based 
 
 RISC-V is an open standard instruction set architecture based on established reduced instruction set computer(RISC) principles. It was first started by Prof. Krste Asanović and graduate students Yunsup Lee and Andrew Waterman in May 2010 as part of the Parallel Computing Laboratory, at UC Berkeley. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use, which provides it a huge edge over other commercially available ISAs. It is a simple, stable, small standard base ISA with extensible ISA support, that has been redefining the flexibility, scalability, extensibility, and modularity of chip designs. This has made it easier and flexible for anyone to build a processor on his own at almost zero cost. 
 
-![](https://miro.medium.com/max/2556/1*88Zj-QJq48IZTiCGUo5mSQ.png)
+![RISCV_logo](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Snaps/RISCV_logo.jpg)
 
 ## What’s Different About RISC-V?
 
@@ -51,6 +51,8 @@ The instruction set includes the standard part and the extension part. The stand
 
 The ISA base and its extensions are developed in a collective effort between industry, the research community and educational institutions. The base specifies instructions (and their encoding), control flow, registers (and their sizes), memory and addressing, logic (i.e., integer) manipulation, and ancillaries. 
 The standard extensions are specified to work with all of the standard bases, and with each other without conflict.
+
+![ISA_base_and_extensions](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Snaps/ISA%20_base_and_extensions.JPG)
 
 The RISC-V ISA is defined as a Base integer ISA, which is the basic necessity for the implemetation of any CPU core. In addition to that it also has optional extensions to the base ISA. The base RISC-V ISA has a little-endian memory system. The standard is maintained by the RISC-V foundation. You can learn more about RISC-V here.
 
@@ -102,6 +104,8 @@ For detailed steps regarding the source code, compilation, simulation and debugg
 
 - The RISC-V architecture has 32 registers from x(0) to x(31) whose width is defined by XLEN which can be 32/64  for RV32/RV64 respectively. Application programmer can access each of these 32 registers through its ABI name.
 
+![ABI](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Snaps/ABI.png)
+
 - In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
 
 - There are two methods to load data in to the registers:
@@ -112,7 +116,7 @@ For detailed steps regarding the source code, compilation, simulation and debugg
 **Register File:** 
 RISC-V contains 32 integer registers and 32 floating point registers. Through the ABI names, we reserve some of these registers for certain purposes. For example, all registers that start with a t for temporary can be used for any purposes. All registers that start with an a for argument are used for arguments passed to a function. All registers that start with s (except sp) for saved are registers that are preserved across function calls.
 
-![ABI](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/ABI.PNG)
+![Register_file](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Snaps/Register_file.JPG)
 
 
 **Types of Instructions:**
@@ -123,6 +127,8 @@ The instructions which operate on the signed and unsigned integer numbers are ca
   Example: ld x8, 16(x32)
   - The instructions that operates only on the source registers and the immediate values, and also used for storing purposes are called as **S-type Instructions**.
   Example: sd x8, 8(x23)
+    
+  ![Instruction_Format](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Snaps/Instruction_formats.JPG
   
 Since all the registers that are being accessed by R-type, or I-type or S-type Instructions are of 5 bits, hence total no of register that can be represented are 2^5 = 32. This is the reason why there are 32 registers (i.e. x0 - x31) present in the RISC-V architecture.
 
@@ -137,6 +143,8 @@ Testing ABI call using [1to9_custom.c](https://github.com/aditikhare11/RISC-V-Co
 Makerchip is a free online environment by Redwood EDA for developing high-quality integrated circuits. The online platform can be used to code, compile, simulate and debug Verilog designs from a browser. It gives you a place to create any digital sequential logic you can dream up faster than you ever thought was possible, all within your browser. The breakthrough in productivity is two fold:
   - A tight integration of design, simulation, and debug capabilities
   - Support for Transaction-Level Verilog (TL-Verilog), in addition to Verilog and synthesizable SystemVerilog.
+  
+![Makerchip](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/Documentation/Snaps/Makerchip.JPG)
   
 For basic tutorial steps , you can refer [here]. For complete details, you can browse [Makerchip Platform](http://makerchip.com/).  
 

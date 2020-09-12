@@ -109,7 +109,8 @@ For detailed steps regarding the source code, compilation, simulation and debugg
      2. **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
 
 
-Below mentioned is the RISC-V calling convention. [Image source:riscv](https://riscv.org/).
+**Register File**
+RISC-V contains 32 integer registers and 32 floating point registers. Through the ABI names, we reserve some of these registers for certain purposes. For example, all registers that start with a t for temporary can be used for any purposes. All registers that start with an a for argument are used for arguments passed to a function. All registers that start with s (except sp) for saved are registers that are preserved across function calls.
 
 ![ABI](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/ABI.PNG)
 
@@ -147,7 +148,7 @@ Timing abstract can be done in TL-Verilog. This model is specified for pipelines
 
 # Implementation of the RISC-V CPU Core
 
-This section will walk through the different implementation steps to achieve the RISC-V core. 
+This section will walk you through the different implementation steps folowed to achieve the design of the RISC-V CPU core. 
 
 **_Please note: Click on the step to be redirected to the code associated with that step. The code can be directly pasted on Makerchip.com to view the design._**
 
@@ -159,60 +160,76 @@ The various components involved in a basic RISC-V CPU Core are as follows:
 
 **[1. Program Counter and Program Counter adder](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Next%20PC)**
 
-Program Counter is a register that contains the address of the instruction being executed. Since memory is byte addressable and the instruction length is 32 bits, the Program Counter adder adds 4 bytes to the address to point to the next address. A reset input is also present which will reset the PC value to 0. 
+Program Counter is a register that contains the address of the next instruction to be executed. It is a pointer into the instruction memory, for the instruction that we are going to execute next. Since the memory is byte addressable and each instruction length is 32 bits, the Program Counter adder adds 4 bytes to the address to point to the next address. For the initial state, before fetching the first ever instruction, there is a present of a reset signal that will reset the PC value to 0. 
+For branch instructions, we will have immediate instructions, for which we have to add an offset value to the PC. So for branch instructions, NextPC = Incremented PC + Offset value.
 
 ![PC](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/PC.PNG)
 
 **[2. Instruction Fetch](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Instruction%20Fetch)**
 
-Here the instruction memory is added to the program. The instruction memory contains a test program which computes the sum of numbers from 1 to 9. The instruction memory read address pointer is computed from the program counter and it outputs a 32 bit instruction. (instr\[31:0])
+Here the instruction memory is added to the program. In the Instruction Fetch logic, the instructions are fetched from the instruction memory amd passed to the Decode logic for computation. The instruction memory read address pointer is computed from the program counter and it outputs a 32 bit instruction. (instr\[31:0]) . In our case, the Makerchip shell provides us an instantiation to the instruction memory, which contains a test program to compute the sum of numbers from 1 to 9.
 
 ![Fetch](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Fetch.PNG)
 
 
 **[3. Instruction Decode](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Instruction%20Decode)**
 
-Instruction type is decoded first using 5 bits of the instruction instr\[6:2]. 
+In the Instruction Decode logic, all the instructions are decoded for the type of instruction, immediate instructions and the field type instructions. The opcode values are translated into instructions, and all the bit values are interpreted as per defined in the RISC-V ISA.
+
+At first, the Instruction type is decoded using 5 bits of the instruction instr\[6:2]. The lower two bits, [1:0] are always equal to '11' for Base integer instructions.
 
 ![Instruction Type](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Instructiontypedecode.PNG)
 
-Next step is to calculate the 32 bit immediate value (imm\[31:0]) based on the instruction type. 
+Next we calculate the 32 bit immediate value (imm\[31:0]) based on the instruction type. 
 
 ![Instruction Imm](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/InstructionImmDecode.PNG)
 
-Other function fields like funct7, rs2, rs1, funct3, rd and opcode are extracted based on the instruction type. At this point valid condtions need to be defined for fields like rs1, rs2, funct3 and funct7 because they are unique to only certain instruction types. 
+Other instruction fields like funct7, rs2, rs1, funct3, rd and opcode are extracted from the 32-bit instruction based on the instruction type. We collect all the bit values of funct7, funct3, opcode, rs2, rs1 and rd into a single vector and then decode the type of instruction. At this point valid condtions need to be defined for fields like rs1, rs2, funct3 and funct7 because they are unique to only certain instruction types. 
 
 Only 8 operations are implemented at this stage namely BEQ, BNE, BLT, BGE, BLTU, BGEU, ADDI and ADD. The other operations from the RV32I Base Instruction Set will be implemented in the later steps. To see the complete list with the associated instruction fields click [here](https://github.com/aditikhare11/RISC-V-Core#pipelining-the-risc-v-core).
 
 **[4. Register File Read](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Register%20File%20Read)**
 
-The register file macro is added which can be viewed under the "NAV-TLV" tab on Makerchip. The two source register fields defined as rs1 and rs2 are fed as inputs to the register file and the outputs are the contents of the source registers. The respective enable bits are set based on the valid conditions for rs1 and rs2 as defined in the previous step. 
+Most of the instructions are arithmetic instructions or other instructions operating on the source registers. We do regitser file read of these source registers. The register file is provided in the shell to us by the macro instantiation //m4+rf (@1, @1) , which can be viewed under the "NAV-TLV" tab on Makerchip. This macro provides us with a register file that defines the interface signals. The register file of the CPU is capable of performing 2 reads in one cycle, of the source operands, and 1 write per cycle of the desination register.
+
+The two source register fields defined as rs1 and rs2 are fed as inputs to the register file and the outputs are the contents of the source registers. The respective enable bits are set based on the valid conditions for rs1 and rs2 as defined in the previous step. Here, since we are accessing two register files at the same time, hence it is callled as 2-port register file.
+
 
 ![File Read](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Register%20File.PNG)
 
 **[5. ALU](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/ALU%20for%20addition)**
 
-The Arithmetic Logic Unit is the component that computes the result based on the selected operation. At this point the code only supports ADD and ADDI operations to execute the test code. All operations will be added at a later step. 
+The Arithmetic Logic Unit is the component that computes the result based on the selected operation. The ALU operates on the contents of the two registers coming out of the register file. It performs the respective arithmetic operation on the two registers, and finally the result of the ALU is written back to the memory using the register file write port. At this point, the code only supports ADD and ADDI operations to execute the test code. All operations will be added at a later step. 
 
 **[6. Register File Write](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Register%20File%20Write)**
 
-This step is essential to provide support for instructions that have a destination register (rd) where the output must be stored. The register file enable depends on the validity of the destination register rd and the write index takes the value stored in rd. An additional condition to ignore write if the destinaton register is x0 is added. x0 register is always equal to zero in RISC-V implementation and hence must not be written to. 
+This step is essential to provide support for instructions that have a destination register (rd) where the output must be stored.  The result of the ALU is written back to the memory using the register_file_write port. The register_file_write_enable depends on the validity of the destination register "rd" . The register_file_write_index then takes the value stored in destination register, rd and loads it into the memory in the location as pointed by the register_file_write_index. Since, in RISC-V architecture, x0 register is a hardwired register, whic is always equal to zero, hence it must be made sure that no write operartion is performed on the x0 register. For this, an additional condition to ignore write operation, if the destinaton register is x0 , has been also added.
 
-**[7. Branches](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Core%20with%20testbench)**
+**[8. Memory File](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Core%20with%20testbench)**
 
-The final step is to add support for branch instructions. A branch target pc has to be computed and based on the branch taken value, the pc will choose the new branch target pc when required. 
+In addition to all of these, we also have a Memory file for which we have load and store instructions. The Store instruction is going to write a value fetched from the register file into the memory. The Load instruction is going to access the memory, take the value from it and them load it into the register file.
+
+**[9. Branches](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Core%20with%20testbench)**
+
+The final step is to add support for branch instructions. In RISC-V ISA, branches are conditional in nature, which means based on a particular condtion, a specific branch is being taken. Moreover, a branch target pc has to be computed and based on the branch taken value, the pc will choose the new branch target pc when required. 
 
 ![Core](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Non-pipelined%20core.PNG)
 
 ## B. Testing the core with a testbench
 
-Now that our implementation is complete, a simple testbench statement can be added to ensure the core is working correctly. 
-When the following line of code is added on Makerchip, the simulation will pass only if the value stored in r10 = sum of numbers from 1 to 9. 
+Now that the implementation is complete, a simple testbench statement can be added to ensure whether the core is working correctly or not. 
+The "passed" and "failed" signals are used to communicate with the Makerchip platform to control the simulation. It tells the platform whther the simulation passed without any errors, failed with a list of errors that can be inferred from the log files, and hence to stop the simulation, if failed. 
+
+When the following line of code as mentioned below is added on Makerchip, the simulation will pass only if the value stored in r10 = sum of numbers from 1 to 9. 
 
 ```
 *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
-In the instruction memory, r10 has been used to store the sum. The simulation passed message can be seen under the "Log" tab and the asm file to compute sum can be viewed in the start under the "Editor" tab
+
+Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
+
+The ASM file to compute the sum of numbers from 1 to n can be viewed at the start, under the "Editor" tab.
+
 [Click here](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Core%20with%20testbench) to view to design.  
 
 ## C. Pipelining the RISC-V core

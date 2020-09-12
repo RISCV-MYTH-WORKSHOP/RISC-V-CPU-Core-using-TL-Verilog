@@ -3,28 +3,36 @@
 This repository contains all the information regarding the **5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop**, offered by for **VLSI System Design (VSD) and Redwood EDA.** In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of **Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform.** Find below the accompanying details.
 
 
-**_Please note: Check the individual day folders for the documentation, source codes and assignments of the respective days.**
+**_Please note: Check the individual day folders for the documentation, source codes and assignments of the respective days._**
 
 
 # Table Of Contents
 
-- [Introduction to RISC-V ISA](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#introduction-to-risc-v-isa)
-  - [What’s Different About RISC-V?](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#whats-different-about-risc-v)
-  - [ISA base and extensions](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#isa-base-and-extensions)
-  - [RISC-V International](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358#risc-v-international)
+- [Introduction to RISC-V ISA](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#introduction-to-risc-v-isa)
+  - [What’s Different About RISC-V?](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#whats-different-about-risc-v)
+  - [ISA base and extensions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#isa-base-and-extensions)
+  - [RISC-V International](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#risc-v-international)
   
-- [Setting up the environment](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#setting-up-the-environment---installation-of-workshop-collaterals-files)
-- [Application Binary Interface (ABI)](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#application-binary-interface-abi)
-- [Makerchip Platform](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#makerchip-platform)
-- [TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#tl-verilog)
-- [Implementation of the RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#implementation-of-the-risc-v-cpu-core)
-  - [Different components of a RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#a-different-components-of-a-risc-v-cpu-core)  
-  - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#b-testing-the-core-with-a-testbench)
-  - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#c-pipelining-the-risc-v-core)
-  - [Final CPU Core Implemetation Diagram](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#final-cpu-core-implemetation-diagram)
-- [Future work](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#future-work)
-- [Acknowledgements](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#acknowlegedgements)
-- [Contact Information](https://github.com/RISCV-MYTH-WORKSHOP/risc-v-myth-workshop-august-Redbeard358/blob/master/README.md#contact-information)
+- [Setting up the environment](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#setting-up-the-environment---installation-of-workshop-collaterals-files)
+- [Application Binary Interface (ABI)](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#application-binary-interface-abi)
+ - [Register File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#register-file)
+ -[Types of Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#types-of-instructions)
+ 
+- [Makerchip Platform](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#makerchip-platform)
+- [TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#tl-verilog)
+
+- [Implementation of the RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#implementation-of-the-risc-v-cpu-core)
+  - [Different logical blocks of a RISC-V CPU Core](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#a-different-logical-blocks-of-a-risc-v-cpu-core)  
+  - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#b-testing-the-core-with-a-testbench)
+  - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#c-pipelining-the-risc-v-cpu-core)
+  - [Complete list of RSC-V Assmbly Language](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#a-complete-list-of-risc-v-assembly-language)
+  - [Final CPU Core Implemetation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#d-final-risc-v-cpu-core-implementation)
+   - [Final Core Block Diagram](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#final-core-block-diagram)
+   
+- [Future Work](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#future-work)
+- [References](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#references)
+- [Acknowledgements](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#acknowlegedgements)
+- [Contact Information](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#contact-information)
 
 
 # Introduction to RISC-V ISA
@@ -92,7 +100,7 @@ In order to understand RISC-V ISA and work on the implementation, you will need 
     
 5. After installation of all the required files, you can move on to perform the compilation and simulation of your codes by followinf [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1)
 
-For detailed steps regarding the source code, compilation, simulation and debugging, visit [Day_1](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1) and [Day_2](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2) folders.
+**_For detailed steps regarding the source code, compilation, simulation and debugging, visit [Day_1](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1) and [Day_2](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2) folders._**
 
 
 
@@ -153,7 +161,7 @@ For basic tutorial steps around the Makerchip platform, you can refer [here](htt
 # TL-Verilog
 Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog that supports a new design methodology, called transaction-level design. For this project, TL-Verilog has been chosed as the HDL of choice for the design. Projects on Makerchip can be completely designed using TL-Verilog. Transaction Level Verilog standard is an extension of Verilog which has various advantages like simpler syntax, shorter codes and easy pipelining. Tha main advantage of TL-Verilog over System Verilog is the amount of code reduction in designing even a simple model.
 
-**_Below mentioned is a small comparision model between a design written in TL-Verilog and System Verilog**
+**_Below mentioned is a small comparision model between a design written in TL-Verilog and System Verilog_**
 
 ![TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/TL-Verilog.JPG)
 
@@ -239,11 +247,11 @@ This step is essential to provide support for instructions that have a destinati
 
 ![Register File n ALU](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Register-file-and-alu.jpg)
 
-**[8. Memory File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_4/Codes)**
+**[7. Memory File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_4/Codes)**
 
 In addition to all of these, we also have a Memory file for which we have load and store instructions. The Store instruction is going to write a value fetched from the register file into the memory. The Load instruction is going to access the memory, take the value from it and them load it into the register file.
 
-**[9. Branches Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Codes/Branch%20Instructions%202.v)**
+**[8. Branches Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Codes/Branch%20Instructions%202.v)**
 
 The final step is to add support for branch instructions. In RISC-V ISA, branches are conditional in nature, which means based on a particular condtion, a specific branch is being taken. Moreover, a branch target pc has to be computed and based on the branch taken value, the pc will choose the new branch target pc when required. 
 
@@ -302,12 +310,12 @@ m4_asm(LW, r17, r0, 10000)
 ![Load Store](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Load-Store.jpg)
 
 
-### A Complete list of RISC-V Assembly Language
+## D. A Complete list of RISC-V Assembly Language
 
 ![RISCV Assembly Language](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/RISCV-Assembluy_Language.png)
 
 
-## D. Final RISC-V CPU Core Implementation
+## E. Final RISC-V CPU Core Implementation
 
 **The snapshot of the final output can be seen below.**
 

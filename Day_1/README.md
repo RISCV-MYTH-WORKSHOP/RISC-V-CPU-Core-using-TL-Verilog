@@ -8,7 +8,51 @@ Day 1 of the workshop included the following:
      3. Integer number representation
      4. Signed and unsigned arithmetic operations
      
+ 
+This was just a warm up of the extensive work we would be doing in the further days. It made us familiar with the VSD-IAT platform and using the lab instances . 
+  A brief overview of how the higher level languages are converted to assembly and then into machine/binary format , in a hierarchical level was given. Then we     were introduced to the various types of instructions which are as follows:
+  
+  - **RV64I** or RV32I Base integer instructions: 64 and 32 bit data instructions respectively
+  - **RV64M** i.e Multiply extension
+  - **RV64IM** : Includes base and multiple extension.
+  - **RV64F** and **RV64D** : Floating point and Double extenstion. 
+  
+  Additionally we learnt about the integer number representation and their maximum and minimum ranges.
+  
+  - Integer: 
+    - Word i.e. 32 bits.
+    - Double word i.e 64 bits
+    - RV64 has range 0 to (2<sup>64</sup> - 1)
     
+  - Negative i.e signed numbers:
+    - Range is - 2<sup>63</sup> to (2<sup>63</sup> - 1)
+    
+    The instructions which work on these numbers are called Base Integer Instruction **RV64I**.
+  
+## Lab 1 : C program of Sum 1 to n  numbers.
+  A basic C program to calculate sum of natural numbers upto a limit provided by the user. The code can be found [here](https://github.com/iamrk-vlsi/RISC-V-MYTH-Workshop/tree/master/DAY1/sum1to9.c) 
+  - Command used to compile the C program is `gcc <filename.c>` or `gcc -o <binary file name> <filename.c>`and to run we use `./a.out` or `./<binary file name>` 
+
+## Lab 2 : C program of Sum 1 to n  numbers, RISC-V toolchain.
+  The same C program is now compiled using RISC-V toolchain. 
+  - Command used to compile the C program is `riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c` or 
+    `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c`.
+  - To view to disassemble and view the object file in readable format,we use `riscv64-unknown-elf-objdump -d sum1ton.o` command.
+  - To run we use spike which is a RISC-V simulator, following is the command `spike pk sum1ton.o`.
+  - Spike has a debugging feature too which can be used to run it in steps, following is the command `spike -d pk sum1ton.o`.
+  
+  **Output on console**
+  ![](DAY1/day_1_lab1.png)
+
+## Lab 3 : Max and Min number representations. 
+  A C program is implemented to  show the maximum and minimum sizes for RV64I. The code can be found [here](https://github.com/iamrk-vlsi/RISC-V-MYTH-Workshop/tree/master/DAY1/unsignedHighest.c) 
+  - Commands used are same as Lab 2
+
+  **Output on console**
+  ![](DAY1/day1_lab2.png) 
+ 
+
+# Lab Exercises
 ## List of commands
 ### For compiling using GNU toolchain
 

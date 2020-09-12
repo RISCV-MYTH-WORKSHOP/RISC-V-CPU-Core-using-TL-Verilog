@@ -1,9 +1,9 @@
 # RISC-V based MYTH Workshop - Building a RISC-V Core using TL-Verilog
 
-This repository contains all the information regarding the 5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop, offered by for VLSI System Design (VSD) and Redwood EDA. In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform. Find below the accompanying details.
+This repository contains all the information regarding the **5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop**, offered by for **VLSI System Design (VSD) and Redwood EDA.** In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of **Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform.** Find below the accompanying details.
 
 
-Check the individual day folders for the source codes and assignments on the respective days.
+**_Please note: Check the individual day folders for the documentation, source codes and assignments of the respective days.**
 
 
 # Table Of Contents
@@ -96,7 +96,7 @@ For detailed steps regarding the source code, compilation, simulation and debugg
 
 # Application Binary Interface (ABI) 
 
-- The **Application Binary Interface(ABI)** , or also called as System call interface is used by the application programmer to directly access the registers of the RISC-V architecture via system calls. In other words, if the applpication programmer wants to access the harware resources of the processor, it has to do via the resgiters, and the way it does it, is thorugh ABI or system calls. RISC-V ABI defines standard functions for registers which allows for software interoperability. 
+- The **Application Binary Interface(ABI)** , or also called as System Call Interface is used by the application programmer to directly access the registers of the RISC-V architecture via system calls. In other words, if the applpication programmer wants to access the harware resources of the processor, it has to do via the resgiters, and the way it does it, is thorugh ABI or system calls. RISC-V ABI defines standard functions for registers which allows for software interoperability. 
 
 - The ABI or application binary interface, consists of 2 parts – one is the set of all user instructions itself, and second is the system call interface through the operating system layer.
 
@@ -105,17 +105,17 @@ For detailed steps regarding the source code, compilation, simulation and debugg
 - In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
 
 - There are two methods to load data in to the registers:
-     1. **By loading directly into the registers:** But since there are only limited a,ount of registers available, so at a time only few bit numbers can be loaded.
-     2. **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
+     [1.] **By loading directly into the registers:** But since there are only limited a,ount of registers available, so at a time only few bit numbers can be loaded.
+     [2.] **By using the Memory:** We load the data into the memory and then from memory we can load the data into the registers.
 
 
-**Register File**
+**Register File:** 
 RISC-V contains 32 integer registers and 32 floating point registers. Through the ABI names, we reserve some of these registers for certain purposes. For example, all registers that start with a t for temporary can be used for any purposes. All registers that start with an a for argument are used for arguments passed to a function. All registers that start with s (except sp) for saved are registers that are preserved across function calls.
 
 ![ABI](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/ABI.PNG)
 
 
-**Types of Instructions**
+**Types of Instructions:**
 The instructions which operate on the signed and unsigned integer numbers are called as Base Interger Instructions. There are about 47 types of Base Insterger Instrcutions in the RISC-V architecture. Some of them are mentioned below:
   - The instructions that operates only on registers are called as **R-type Instructions**. 
   Example: add x8, x24, x8
@@ -127,7 +127,7 @@ The instructions which operate on the signed and unsigned integer numbers are ca
 Since all the registers that are being accessed by R-type, or I-type or S-type Instructions are of 5 bits, hence total no of register that can be represented are 2^5 = 32. This is the reason why there are 32 registers (i.e. x0 - x31) present in the RISC-V architecture.
 
 
-For testing the ABI call using 1to9_custom.c and load.S in order to find sum of numbers from 1 to 9, we refere to the Day_2 folder.
+For testing the ABI call using 1to9_custom.c and load.S in order to find sum of numbers from 1 to 9, we refer to the Day_2 folder.
 Testing ABI call using [1to9_custom.c](https://github.com/aditikhare11/RISC-V-Core/blob/master/Codes/1to9_custom.c) and [load.S](https://github.com/aditikhare11/RISC-V-Core/blob/master/Codes/load.S) to find sum of numbers from 1 to 9.
 
 
@@ -143,12 +143,12 @@ For basic tutorial steps , you can refer [here]. For complete details, you can b
 # TL-Verilog
 Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog that supports a new design methodology, called transaction-level design. For this project, TL-Verilog has been chosed as the HDL of choice for the design. Projects on Makerchip can be completely designed using TL-Verilog. Transaction Level - Verilog standard is an extension of Verilog which has various advantages like simpler syntax, shorter codes and easy pipelining. You can learn more about TL-Verilog [here](http://tl-x.org/).
 
-Timing abstract can be done in TL-Verilog. This model is specified for pipelines where the sequential elements are generated by tools from the pipelined specification. This allows for easy retiming without the risk of introduction of any functional bugs. More information on timing abstract in TL-Verilog can be found in the IEEE paper ["Timing-Abstract Circuit Design in Transaction-Level Verilog" by Steven Hoover](https://ieeexplore.ieee.org/document/8119264).
+Timing abstract can be done in TL-Verilog. This model is specified for pipelines where the sequential elements are generated by tools from the pipelined specification. This allows for easy retiming without the risk of introduction of any functional bugs. More information on timing abstract in TL-Verilog can be found in the IEEE paper ["Timing-Abstract Circuit Design in Transaction-Level Verilog" by Steven Hoover"](https://ieeexplore.ieee.org/document/8119264).
 
 
 # Implementation of the RISC-V CPU Core
 
-This section will walk you through the different implementation steps folowed to achieve the design of the RISC-V CPU core. 
+This section will walk you through the different implementation steps followed to achieve the design of the complete RISC-V CPU core. 
 
 **_Please note: Click on the step to be redirected to the code associated with that step. The code can be directly pasted on Makerchip.com to view the design._**
 
@@ -158,25 +158,28 @@ Example of a RISC-V CPU Core block diagram.
 
 The various components involved in a basic RISC-V CPU Core are as follows: 
 
-**[1. Program Counter and Program Counter adder](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Next%20PC)**
+**[1. Program Counter(PC) and Next PC Logic](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Next%20PC)**
 
-Program Counter is a register that contains the address of the next instruction to be executed. It is a pointer into the instruction memory, for the instruction that we are going to execute next. Since the memory is byte addressable and each instruction length is 32 bits, the Program Counter adder adds 4 bytes to the address to point to the next address. For the initial state, before fetching the first ever instruction, there is a present of a reset signal that will reset the PC value to 0. 
-For branch instructions, we will have immediate instructions, for which we have to add an offset value to the PC. So for branch instructions, NextPC = Incremented PC + Offset value.
+Program Counter is a register that contains the address of the next instruction to be executed. It is a pointer into the instruction memory, for the instruction that we are going to execute next. Since the memory is byte addressable and each instruction length is 32 bits, the Program Counter adder adds 4 bytes to the address to point to the next address. 
+
+For the initial state, before fetching the first ever instruction, there is a presence of a reset signal that will reset the PC value to 0. 
+
+For branch instructions, we will have immediate instructions, for which we have to add an offset value to the PC. So for branch instructions, **NextPC = Incremented PC + Offset value.**
 
 ![PC](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/PC.PNG)
 
-**[2. Instruction Fetch](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Instruction%20Fetch)**
+**[2. Instruction Fetch Logic](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Instruction%20Fetch)**
 
 Here the instruction memory is added to the program. In the Instruction Fetch logic, the instructions are fetched from the instruction memory amd passed to the Decode logic for computation. The instruction memory read address pointer is computed from the program counter and it outputs a 32 bit instruction. (instr\[31:0]) . In our case, the Makerchip shell provides us an instantiation to the instruction memory, which contains a test program to compute the sum of numbers from 1 to 9.
 
 ![Fetch](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Fetch.PNG)
 
 
-**[3. Instruction Decode](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Instruction%20Decode)**
+**[3. Instruction Decode Logic](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Instruction%20Decode)**
 
 In the Instruction Decode logic, all the instructions are decoded for the type of instruction, immediate instructions and the field type instructions. The opcode values are translated into instructions, and all the bit values are interpreted as per defined in the RISC-V ISA.
 
-At first, the Instruction type is decoded using 5 bits of the instruction instr\[6:2]. The lower two bits, [1:0] are always equal to '11' for Base integer instructions.
+At first, the Instruction type is decoded using 5 bits of the instruction instr\[6:2]. The lower two bits from [1:0] are always equal to '11' for Base integer instructions.
 
 ![Instruction Type](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Instructiontypedecode.PNG)
 
@@ -197,7 +200,7 @@ The two source register fields defined as rs1 and rs2 are fed as inputs to the r
 
 ![File Read](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Register%20File.PNG)
 
-**[5. ALU](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/ALU%20for%20addition)**
+**[5. Arithmetic and Logic Unit(ALU)](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/ALU%20for%20addition)**
 
 The Arithmetic Logic Unit is the component that computes the result based on the selected operation. The ALU operates on the contents of the two registers coming out of the register file. It performs the respective arithmetic operation on the two registers, and finally the result of the ALU is written back to the memory using the register file write port. At this point, the code only supports ADD and ADDI operations to execute the test code. All operations will be added at a later step. 
 
@@ -215,7 +218,8 @@ The final step is to add support for branch instructions. In RISC-V ISA, branche
 
 ![Core](https://github.com/aditikhare11/RISC-V-Core/blob/master/RISC-V/Non-pipelined%20core.PNG)
 
-## B. Testing the core with a testbench
+
+## B. Testing the core with a Testbench
 
 Now that the implementation is complete, a simple testbench statement can be added to ensure whether the core is working correctly or not. 
 The "passed" and "failed" signals are used to communicate with the Makerchip platform to control the simulation. It tells the platform whther the simulation passed without any errors, failed with a list of errors that can be inferred from the log files, and hence to stop the simulation, if failed. 
@@ -232,7 +236,7 @@ The ASM file to compute the sum of numbers from 1 to n can be viewed at the star
 
 [Click here](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Core%20with%20testbench) to view to design.  
 
-## C. Pipelining the RISC-V core
+## C. Pipelining the RISC-V CPU Core
 
 The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerchip is extremely simple. To define a pipeline use the following syntax:
 ```
@@ -259,7 +263,7 @@ m4_asm(SW, r0, r10, 10000)
 m4_asm(LW, r17, r0, 10000)
 ```
 
-## Final CPU Core Implemetation Diagram
+## D. Final CPU Core Implementation Diagram
 
 The snapshot of the final core can be seen below. [Click here](http://makerchip.com/sandbox/0wpfLhK8v/0vgh7NL) to view the final design on Makerchip. Additionally you can also paste the code on this [link](https://github.com/aditikhare11/RISC-V-Core/blob/master/Makerchip%20Codes/Final%20Pipelined%20RISC-V%20Core) directly on [makerchip.com](http://makerchip.com/) to view the project.
 
@@ -269,6 +273,16 @@ The snapshot of the final core can be seen below. [Click here](http://makerchip.
 
 This project was done as a part of the [**RISC-V based MYTH (Microprocessor for You in Thirty Hours)**](https://www.vlsisystemdesign.com/riscv-based-myth/) workshop conducted by **Kunal Ghosh** and **Steve Hoover**. The current project implements almost the entire RV32I base instruction set. Future work involves modifying the current design to implement support for the remaining operations and also implementation of other standard extensions like M, F and D. 
 
+
+# References
+
+You can follow the below mentioned sites for more information regarding the particular topics.
+
+- RISC-V: https://riscv.org/
+- Makerchip Platform: https://makerchip.com/
+- TL-Verilog: https://www.redwoodeda.com/tl-verilog
+- Redwood EDA: https://www.redwoodeda.com/
+- VLSI System Design: https://www.vlsisystemdesign.com/
 
 # Acknowlegedgements
 

@@ -45,15 +45,10 @@ On This day, we delved deep into the lower layers on how the higher layer instru
   - To view to disassemble and view the object file in readable format, we use `riscv64-unknown-elf-objdump -d 1to9_custom.o|less`.
   - To run we use spike which is a RISC-V simulator, following is the command `spike pk 1to9_custom.o`.
   
-  **Output on console**
-![](DAY2/day2_lab1_asm.png)
-
 ## Lab 2 : To run and verify on a RISC-V Core
   An RTL implementation of a RISC-V core has been provided to us and we run the above program using the scripts provided to using iverilog simulator, just to observe  the behaviour of the program in hardware. A similar core would be implemented by us in the forthcoming days.
   
-  **Output on console**
-  ![](DAY2/day2_lab2_iverilog_count_3.png)
-
+  
 ### List of Commands
 
 1. Write the modified custom C code.

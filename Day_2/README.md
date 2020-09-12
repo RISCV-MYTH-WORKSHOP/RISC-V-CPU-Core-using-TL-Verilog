@@ -29,10 +29,10 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 
 
 On This day, we delved deep into the lower layers on how the higher layer instructions in c are translated to machine understandable codes. 
-  Just like how application program interface (API) is used by application programs to access the standard libraries, an application binary interface or system     call interface is utilised hardware resources . The ISA is inherently divided into two parts: *User & System ISA* and *User ISA*  the latter is available to the   user directly by system calls. 
+  Just like how application program interface (API) is used by application programs to access the standard libraries, an application binary interface or system call interface is utilised hardware resources . The ISA is inherently divided into two parts: *User & System ISA* and *User ISA*  the latter is available to the   user directly by system calls. 
   
   Now, how does the ABI access the hardware resources? 
-  - It uses different registers(32 in number) which are each of width `XLEN = 32 bit` for RV32 (~`XLEN = 64 for RV64`) . On a higher level of abstraction these       registers are accessed by their respective ABI names.
+  - It uses different registers(32 in number) which are each of width `XLEN = 32 bit` for RV32 (~`XLEN = 64 for RV64`) . On a higher level of abstraction these registers are accessed by their respective ABI names.
   
   For base integer instructions there are broadly 3 types of of such registers:
   - I-type : For instructions having immediate values as operands.
@@ -40,7 +40,7 @@ On This day, we delved deep into the lower layers on how the higher layer instru
   - S-type : For instructions used for storing operations.
   
 ## Lab 1 : ASM & ABI function Calls
-  A new program is made by modifying the original `sum1ton.c` and adding ASM and ABI function call .The code can be found [here](https://github.com/iamrk-vlsi/RISC-V-MYTH-Workshop/tree/master/DAY2/Day2_lab1)
+  A new program is made by modifying the original `sum1ton.c` and adding ASM and ABI function call .The code can be found [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2/Programs)
   - Command used to compile the program is `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.S`. 
   - To view to disassemble and view the object file in readable format, we use `riscv64-unknown-elf-objdump -d 1to9_custom.o|less`.
   - To run we use spike which is a RISC-V simulator, following is the command `spike pk 1to9_custom.o`.
@@ -125,6 +125,6 @@ For 32-bit : `$vim firmware32.hex`
 
 These files shows how the application software is converted into bitstreams and this firmware file is loaded into the memory through the testbench. This file is then processed by the RISC-V core and finally it displays the output results.
 
-### Final Output snap of Day_3
+### Final Output snap of Day_2
 
 ![](Snaps/rvsim32_output.JPG)

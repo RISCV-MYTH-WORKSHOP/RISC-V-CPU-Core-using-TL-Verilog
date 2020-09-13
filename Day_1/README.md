@@ -9,7 +9,7 @@ Day 1 of the workshop included the following:
      4. Signed and unsigned arithmetic operations
      
  
-Day_1 started with an introductory session by @Kunalghosh and @Stevehoover. They briefed us about the entire woksop flow. We were made familiar with the VSD-IAT platform and using the lab instances . 
+Day_1 started with an introductory session by @Kunalghosh and @Stevehoover. They briefed us about the entire wokshop flow. We were made familiar with the VSD-IAT platform and using the lab instances . 
 
 A brief overview of how the higher level languages are converted to assembly and then into machine/binary format, and then finally how it gets comverted into a chip layout was given in a hierarchical manner. We were introduced to RISC-V ISA and GNU Compiler Toolchain. We were made familiar with the various types of RISC-V instructions sets, such as:
   
@@ -30,19 +30,17 @@ Additionally we learnt about the signed and unsigned integer number representati
     
     The instructions which work on these numbers are called Base Integer Instruction **RV64I**.
     
-    
+    A CPU core implementing all the above type of instrcutions is called as **RV64IMFD** CPU Core.
     
  
 # Lab Exercises
-
-Ther labs included the following:
  
 ## Lab 1 : C program of to find the Sum of numbers from 1 to n
 
 A basic C program to calculate sum of natural numbers upto a limit provided by the user. The code can be found [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_1/Codes/sum_1_to_n.c) 
 
-### List of commands
-#### For compiling using GNU toolchain
+## List of commands
+### For compiling using GNU toolchain
 
 1. Open a file named sum_1_to_n. using leafpad editor.  
      `$leafpad sum_1_to_n.c`   
@@ -56,9 +54,9 @@ A basic C program to calculate sum of natural numbers upto a limit provided by t
 ## Lab 2 : Using RISC-V compiler toolchain, and code disassamble ans spike simulator.
   The same C program is now compiled using RISC-V toolchain. Spike simulator is used to run the object file , and aslo as a debugger.  
   
-### List of commands
+## List of commands
   
-#### For compiling using RISC-V simulator
+### For compiling using RISC-V simulator
 
 1. Since we have previously created our sum_1_to_n.c program file, now to run the same program using RISC-V simulator:
 
@@ -92,7 +90,7 @@ There are different compiler options like **-O1, -Ofast** and all. Here, in case
 ![](Command_Snaps/spike_command.JPG)
 
 
-#### For debugging using RISC-V simulator
+### For debugging using RISC-V simulator
 
 1. In order to debug all the assembly set instructions, we do it with the spike debugger. 
 

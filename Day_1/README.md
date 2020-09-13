@@ -78,7 +78,7 @@ A basic C program to calculate sum of natural numbers upto a limit provided by t
 
 **Objdump file using -Ofast:**
 
-![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_1/Output_Snaps/objdump_main_using_Ofast.JPGG)
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_1/Output_Snaps/objdump_main_using_Ofast.JPG)
 
 **Objdump file using -O1:**
 

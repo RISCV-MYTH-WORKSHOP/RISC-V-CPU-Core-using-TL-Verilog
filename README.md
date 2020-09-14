@@ -12,7 +12,7 @@ Check the individual day folders for the documentation, source codes and assignm
 - [Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1)
 - [Day 2: Introduction to ABI and basic verification flow](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2)
 - [Day 3: Digital Logic with TL-Verilog and Makerchip](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_3)
-- [Day 4 Basic RISC-V CPU micro-architecture and Implementation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/README.md)
+- [Day 4: Basic RISC-V CPU micro-architecture and Implementation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/README.md)
 - [Day 5: Complete Pipelined RISC-V CPU micro-architecture](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_5)
 
 

@@ -355,7 +355,7 @@ m4_asm(LW, r17, r0, 10000)
 
 ### Code Comparision
 
-The code required for the RISC-V Core written in TL-Verilog and System Verilog can be compared by selectinf the "Show Verilog" on the makerchip platform under the "E" tab. Upon visualization, a significant code reduction can be seen in the comparision chart. 
+The code required for the RISC-V Core written in TL-Verilog and System Verilog can be compared by selecting the **"Show Verilog"** on the makerchip platform under the **"E"** tab. Upon visualization, a significant code reduction can be seen in the comparision chart. 
 
 ![Code_Comparision](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Code_Comparision.JPG)
 

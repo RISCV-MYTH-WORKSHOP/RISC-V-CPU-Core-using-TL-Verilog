@@ -15,7 +15,7 @@ Just like how Application Program Interface (API) is used by application program
   Now, how does the ABI access the hardware resources? 
   - It uses different registers(32 in number) which are each of width `XLEN = 32 bit` for RV32 (~`XLEN = 64 for RV64`) . On a higher level of abstraction these registers are accessed by their respective ABI names.
   
-  -In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
+ - In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
   
   For base integer instructions there are broadly 3 types of of such registers:
   - I-type : For instructions having immediate values as operands.
@@ -25,7 +25,7 @@ Just like how Application Program Interface (API) is used by application program
 We try to implement the same program "sum of numbers from 1 to n" in a different method by taking the advantage of ABI interface and function calls.
 - There is the main C program containing the code for the summation of numbers from 1 to n.
 - We modify it and through the C program we make some funtion calls to the Assembly Language Program trhough the registers a0 and a1.
-- We write the assembly language program in thr ROSC-V ISA and do the computation.
+- We write the assembly language program in the RISC-V ISA and do the computation.
 - Finally we send back the final results through the register a0 to the C pogram to get the final output. 
 
 

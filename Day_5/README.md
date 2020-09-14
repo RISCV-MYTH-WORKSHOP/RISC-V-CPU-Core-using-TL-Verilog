@@ -1,0 +1,23 @@
+# Day 5: Complete Pipelined RISC-V CPU micro-architecture/store
+
+Day 5 of the workshop included the following:
+
+     1. Pipelining the CPU
+     2. Load and store instructions and memory
+     3. Completing the RISC-V CPU
+     4. Wrap-up and future opportunities
+     
+     
+Finally, the RISC-V core was developed on Day_4. Now its time for implementing the pipelining technique for the core, and some additonal instructions. The above architecture is pipelined as follows :
+
+ - A 3 cycle RISC V pipelined core, with all the base integer instruction sets was developed.
+ - For Load and store a Data memory element was added with neccessary instruction decoding logic.
+ - Register Bypass and Squashing techniques were also incorporated to prevent Read followed by write and branchinghazards, arised due to pipelining.
+ - Testing of the pipeline design was done in same manner with Load and store incorporated in asm code.
+ - Additionally Incorporation of Jump feature (JAL and JALR instructions) was also done.
+ 
+ The final code can be found here.[]()
+ 
+ ## Final Day_5 Output
+ 
+ ## Final Implemention of RISC-V CPU Core

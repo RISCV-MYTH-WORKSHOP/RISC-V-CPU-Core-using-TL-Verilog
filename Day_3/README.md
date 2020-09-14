@@ -24,40 +24,56 @@ An introduction to TL-Verilog was done and we implemented basic combinational an
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Full_Adder_Ckt.JPG)
   
+  
+  
   ### 2. Combinational Calculator
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Combinational_calculator.JPG)
+  
+  
   
   ### 3. Sequential Logic Example: Fibonacci Series
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Fibonacci_sequence_using_pipeline.JPG)
   
+  
+  
   ### 4. Sequential Calculator
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Sequential_calculator.JPG)
+  
+  
 
   ### 5. A Simple Pipeline through Pythagorous Theorem example
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Pythagorean_example_validity_check2.JPG)
   
+  
+  
   ### 6. Example of Implementation of Pipelining throuh TL-Verilog
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Implement_basic_pipeline.JPG)
+  
+  
       
   ### 7. 2-Cycle Calculator
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/2-cycle_calculator.JPG)
   
   
+  
   ### 8. Example : Distance Acculmulator
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/Distance_accumulator.JPG)
+  
+  
   
   ### 9. 2-Cycle Calculator with validity
   
   ![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_3/Lab_outputs/2-cycle%20calculator%20with%20validity%20final%20output.JPG)
   
    **Note** As seen above, apart from the waveforms, The VIZ graphic visualizer was a very helpful tool in Makerchip which helped us analyse and debug our design in case of any functional errors.
+  
   
   
   ### 10. Calculator with Single Value Memory

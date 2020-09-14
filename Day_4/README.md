@@ -1,5 +1,6 @@
 # Day 4 RISCV CPU Core Implementation.
-  Due to the strong basics built in TL-Verilog and digital design in the previous day , The core aspect of this workshop to build a RISC V core went smoothly for   me. On this day , a plan was implemented to build the following :
+
+After building up strong basics built in TL-Verilog and digital design, and getting completely familiar with the Makerchip Platform, it was time to move on to the core aspect of the workshop, i.e. to build a RISC V core. On this day , the following basic blocks were implemented :
   
   - Program Counter (PC)
   - Imem-Rd ( Instruction Memory)
@@ -9,10 +10,42 @@
   - Register File Write
   - Branch
   
-  Thus the instruction set architecture of base integer instructions, The register file, branching,etc. and eventually the CPU core was built and tested(using appropriate testbench logic, and assembly code developed on Day 2) at the end of the day ,in similar progressive fashion like the previous day.The code can be found [here](https://github.com/iamrk-vlsi/RISC-V-MYTH-Workshop/tree/master/DAY4/MP_1_cycle.tlv).
+Thus the instruction set architecture of base integer instructions, next_pc logic, the register file, ALU, branch instructions, etc. and eventually the CPU core was built and tested, using appropriate testbench logic, and assembly code developed on Day 2, by the end of the day. The codes can be found [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_4/Codes).
 
-   **Makerchip IDE**
-   ![](DAY4/Day4_makerchip.png)
+## Lab Exercises: 
 
-   **RISC-V CORE**
-   ![](DAY4/RISCV_CPU_CORE_1cycle.png)	
+### 1. Next PC Logic
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/1.%20Next%20PC.JPG)
+
+### 2. Instruction Fetch Logic
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/2.%20Instruction%20Fetch%20Logic.JPG)
+
+### 3. Instruction Decode
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/6.%20Instruction%20Decode(2).JPG)
+
+### 4. Register File Read 
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/8.%20Register%20file%20read%202.JPG)
+
+### 5. Arithmetic and Logic Unit(ALU)
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/9.%20ALU.JPG)
+
+### 6. Register File Write
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/10.%20Register%20file%20write.JPG)
+
+### 7. Branch Instructions 
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/11.%20Branch%20Instructions%202.JPG)
+
+### 8. Final Day_4 Output: RISCV Core
+
+The final RISC-V CPU core (without pipelining) has been completely implemented.
+
+![](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Output%20Snaps/12.%20Testbench.JPG)
+
+

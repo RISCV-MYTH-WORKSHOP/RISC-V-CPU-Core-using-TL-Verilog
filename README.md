@@ -3,8 +3,21 @@
 This repository contains all the information regarding the **5-day RISC-V based CPU Core Design MYTH (Microprocessor for You in Thirty Hours) Workshop**, offered by for **VLSI System Design (VSD) and Redwood EDA.** In a short span of 5-days, the basic RISC-V ISA was studied & a simple RISC-V core with base instruction set was implemented. Under the software section, the programming languages that have been used are C, Assembly language and some Pseudo codes. The RISC-V CPU Core has been designed with the help of **Transaction Level Verilog(TL-Verilog) in addition with the Makerchip IDE Platform.** Find below the accompanying details.
 
 
-**_Please note: Check the individual day folders for the documentation, source codes and assignments of the respective days._**
+# Contents of the Workshop
 
+Check the individual day folders for the documentation, source codes and assignments of the respective days of the workshop.
+
+- [Day 1: Introduction to RISC-V ISA and GNU compiler toolchain](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1)
+- [Day 2: Introduction to ABI and basic verification flow](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2)
+- [Day 3: Digital Logic with TL-Verilog and Makerchip](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_3)
+- [Day 4: Basic RISC-V CPU micro-architecture and Implementation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/README.md)
+- [Day 5: Complete Pipelined RISC-V CPU micro-architecture](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_5)
+
+
+**_Please note: The Day3_5 folder has been created at the time of the workshop for evaluation purpose. You can ignore that._**
+
+
+# Documentation
 
 # Table Of Contents
 

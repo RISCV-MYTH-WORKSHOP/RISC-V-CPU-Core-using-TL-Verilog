@@ -1,4 +1,4 @@
-# Day 4 Basic RISC-V CPU micro-architecture and Implementation.
+# Day 4 Basic RISC-V CPU micro-architecture and Implementation
 
 Day 4 of the workshop included the following:
 

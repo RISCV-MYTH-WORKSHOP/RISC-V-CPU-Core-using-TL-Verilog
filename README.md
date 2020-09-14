@@ -111,7 +111,7 @@ In order to understand RISC-V ISA and work on the implementation, you will need 
 
     `$./run.sh`
     
-5. After installation of all the required files, you can move on to perform the compilation and simulation of your codes by followinf [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1)
+5. After installation of all the required files, you can move on to perform the compilation and simulation of your codes by following [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1)
 
 **_For detailed steps regarding the source code, compilation, simulation and debugging, visit [Day_1](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_1) and [Day_2](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2) folders._**
 

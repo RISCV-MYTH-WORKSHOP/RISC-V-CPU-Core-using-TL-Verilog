@@ -8,10 +8,24 @@ Day 2 of the workshop included the following:
     3. Basic verification flow using iverilog
 
 ## Documentation
+
+On the 2nd day of the workshop, we went deep into understanding the lower layers on how the higher layer instructions in C are translated to machine understandable codes. 
+Just like how Application Program Interface (API) is used by application programs to access the standard libraries, an Application Binary Interface(ABI) , aslo called as  System call interface is utilised to access the hardware resources. The ISA is inherently divided into two parts: *User & System ISA* and *User ISA*. The latter is available to the prgrammer directly through system calls. 
+  
+  Now, how does the ABI access the hardware resources? 
+  - It uses different registers(32 in number) which are each of width `XLEN = 32 bit` for RV32 (~`XLEN = 64 for RV64`) . On a higher level of abstraction these registers are accessed by their respective ABI names.
+  
+ - In RISC-V architecture, the memories are byte addressable. The RISC-V belongs to the little endian memory addressing system.
+  
+  For base integer instructions there are broadly 3 types of of such registers:
+  - I-type : For instructions having immediate values as operands.
+  - R-type : For instructions having only registers as operands.
+  - S-type : For instructions used for storing operations.
+
 We try to implement the same program "sum of numbers from 1 to n" in a different method by taking the advantage of ABI interface and function calls.
 - There is the main C program containing the code for the summation of numbers from 1 to n.
 - We modify it and through the C program we make some funtion calls to the Assembly Language Program trhough the registers a0 and a1.
-- We write the assembly language program in thr ROSC-V ISA and do the computation.
+- We write the assembly language program in the RISC-V ISA and do the computation.
 - Finally we send back the final results through the register a0 to the C pogram to get the final output. 
 
 
@@ -28,16 +42,7 @@ We try to implement the same program "sum of numbers from 1 to n" in a different
 ![](Snaps/Snap_of_C_code_and_Assmebly_code.jpg)
 
 
-On This day, we delved deep into the lower layers on how the higher layer instructions in c are translated to machine understandable codes. 
-  Just like how application program interface (API) is used by application programs to access the standard libraries, an application binary interface or system call interface is utilised hardware resources . The ISA is inherently divided into two parts: *User & System ISA* and *User ISA*  the latter is available to the   user directly by system calls. 
-  
-  Now, how does the ABI access the hardware resources? 
-  - It uses different registers(32 in number) which are each of width `XLEN = 32 bit` for RV32 (~`XLEN = 64 for RV64`) . On a higher level of abstraction these registers are accessed by their respective ABI names.
-  
-  For base integer instructions there are broadly 3 types of of such registers:
-  - I-type : For instructions having immediate values as operands.
-  - R-type : For instructions having only registers as operands.
-  - S-type : For instructions used for storing operations.
+
   
 ## Lab 1 : ASM & ABI function Calls
   A new program is made by modifying the original `sum1ton.c` and adding ASM and ABI function call .The code can be found [here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/tree/master/Day_2/Programs)

@@ -28,8 +28,8 @@ Check the individual day folders for the documentation, source codes and assignm
   
 - [Setting up the environment](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#setting-up-the-environment---installation-of-workshop-collaterals-files)
 - [Application Binary Interface (ABI)](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#application-binary-interface-abi)
- - [Register File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#register-file)
- - [Types of Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#types-of-instructions)
+  - [Register File](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#register-file)
+  - [Types of Instructions](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#types-of-instructions)
  
 - [Makerchip Platform](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#makerchip-platform)
 - [TL-Verilog](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#tl-verilog)

@@ -284,7 +284,18 @@ When the following line of code as mentioned below is added on Makerchip, the si
 
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
 
+![Simulation Passed](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Simulation_passed.JPG)
+
 The ASM file to compute the sum of numbers from 1 to n can be viewed at the start, under the "Editor" tab.
+
+![ASM_code](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/ASM_Code.JPG)
+
+### The VIZ Graphic Visualizer
+
+There was the presence of VIZ graphic visualizer, which is a special feature of the Makerchip platform and is not made public for all. This tool was allowed to all the students of the workshop, which proved to be a very useful tool which helped us analyse and debug our design in case of any functional errors.
+As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie equal to 45 has been stored in the register r10, and simultaneously written into memory address 16 (4 because of byte addressing).
+
+![VIZ](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Visulization_tab.JPG)
 
 [Click here](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Day_4/Codes/Day_4_Final_Code.v) to view the complete RISC-V CPU Core design, without pipeline, with testbench included..  
 
@@ -341,6 +352,12 @@ m4_asm(LW, r17, r0, 10000)
 ### Final Core Block Diagram
 
 ![Final Core](Day3_5/Final_Output_for_RISC-V_Implemented_CPU_Core.JPG)
+
+### Code Comparision
+
+The code required for the RISC-V Core written in TL-Verilog and System Verilog can be compared by selectinf the "Show Verilog" on the makerchip platform under the "E" tab. Upon visualization, a significant code reduction can be seen in the comparision chart. 
+
+![Code_Comparision](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/Documentation/Snaps/Code_Comparision.JPG)
 
 
 # Future Work 

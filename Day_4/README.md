@@ -1,4 +1,10 @@
-# Day 4 RISCV CPU Core Implementation.
+# Day 4 Basic RISC-V CPU micro-architecture and Implementation.
+
+Day 4 of the workshop included the following:
+
+    1. Microarchitecture and testbench for a simple RISC-V CPU
+    2. Fetch, decode, and execute logic
+    3. RISC-V control logic
 
 After building up strong basics built in TL-Verilog and digital design, and getting completely familiar with the Makerchip Platform, it was time to move on to the core aspect of the workshop, i.e. to build a RISC V core. On this day , the following basic blocks were implemented :
   

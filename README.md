@@ -39,7 +39,7 @@ Check the individual day folders for the documentation, source codes and assignm
   - [Testing the core with a testbench](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#b-testing-the-core-with-a-testbench)
    - [The VIZ Graphic Visualizer](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#the-viz-graphic-visualizer)
   - [Pipelining the RISC-V core](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#c-pipelining-the-risc-v-cpu-core)
-  - [Complete list of RSC-V Assembly Language](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#d-a-complete-list-of-risc-v-assembly-language)
+  - [Complete list of RISC-V Assembly Language](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#d-a-complete-list-of-risc-v-assembly-language)
   - [Final CPU Core Implemetation](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#e-final-risc-v-cpu-core-implementation)
    - [Final Core Block Diagram](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#final-core-block-diagram)
    - [Code Comparision](https://github.com/RISCV-MYTH-WORKSHOP/RISC-V-CPU-Core-using-TL-Verilog/blob/master/README.md#code-comparision)

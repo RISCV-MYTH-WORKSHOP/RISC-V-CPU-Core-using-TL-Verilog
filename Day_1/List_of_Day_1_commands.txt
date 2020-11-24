@@ -1,0 +1,53 @@
+HOW TO COMPILE using GCC 
+Syntax: $gcc <C-filename>
+
+Example:
+$gcc sum_1_to_n.c    //To compile the file
+$./a.out             //To run the output object file
+
+
+
+HOW TO COMPILE USING RISCV 
+Syntax: $riscv64-unknown-elf-gcc <compiler option -O1 ; Ofast> <ABI specifier -lp64; -lp32; -ilp32> <architecture specifier -RV64 ; RV32> -o <object filename> <C filename> 
+
+Example:
+$riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1_to_n.0 sum_1_to_n.c
+$riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o unsignedHighest.o unsignedHighest.c
+$riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o signedHighest.o signedHighest.c
+
+
+
+LINKS FOR COMPILER OPTIONS - 
+https://www.sifive.com/blog/all-aboard-part-1-compiler-args
+https://gcc.gnu.org/onlinedocs/gcc/Option-Index.html#Option-Index_op_letter-O
+
+
+
+HOW TO VIEW THE ASSEMBLY CODE/ DISASSEMBLY 
+Syntax: 
+RISCV - riscv64-unknown-elf-objdump -d <object filename> | less
+x86   - objdump -d -M intel -s <object filename compiled using gcc> 
+
+Example: $riscv64-unknown-elf-objdump -d unsignedHighest.o | less
+
+
+
+SPIKE SIMULATOR TO RUN THE RISCV OBJ FILE 
+Syntax: $spike pk <Object Filename>
+Example : spike pk sum_1_to_n.o
+
+
+
+TO USE SPIKE AS A DEBUGGER
+Syntax: $spike -d pk <Object Filename>
+until pc 0 <pc of your choice>
+
+Example: 
+$spike -d pk unsignedHighest.o
+: until pc 0 100b0    //user input to run program counter from address 100b0
+bbl loader            //system printed
+: reg 0 a0            //user input to check value of reg a0
+
+
+
+
